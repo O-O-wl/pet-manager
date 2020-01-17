@@ -11,13 +11,13 @@ import Foundation
 struct Animal: Codable {
     let name: String
     let cryingSound: String?
-    let profileImageData: Data
+    let profileImageAssetName: String
 }
 extension Animal {
-    static let dog = Animal(name: "강아지", cryingSound: "멍 멍", profileImageData: AnimalImageData.dog)
-    static let cat = Animal(name: "고양이", cryingSound: "야 옹", profileImageData: AnimalImageData.cat)
-    static let parrot = Animal(name: "앵무새", cryingSound: "짹 짹", profileImageData: AnimalImageData.parrot)
-    static let lizard = Animal(name: "도마뱀", cryingSound: nil, profileImageData: AnimalImageData.lizard)
-    
+    static let dog = Animal(name: "강아지", cryingSound: "멍 멍", profileImageAssetName: ImageAsset.Name.dog)
+    static let cat = Animal(name: "고양이", cryingSound: "야 옹", profileImageAssetName: ImageAsset.Name.cat)
+    static let parrot = Animal(name: "앵무새", cryingSound: "짹 짹", profileImageAssetName: ImageAsset.Name.parrot)
+    static let lizard = Animal(name: "도마뱀", cryingSound: nil, profileImageAssetName: ImageAsset.Name.lizard)
+
     static let defaultCases = [Animal.dog, Animal.cat, Animal.parrot, Animal.lizard]
 }
