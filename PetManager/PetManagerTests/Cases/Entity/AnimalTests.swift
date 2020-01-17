@@ -37,8 +37,6 @@ class AnimalTests: XCTestCase {
         XCTAssertEqual(animal.cryingSound, cryingSound)
         XCTAssertEqual(animal.profileImageData, imageData)
     }
-    
-    
 
     func test_animal_initalization_when_cryingSound_is_nil() {
         // given
@@ -55,5 +53,4 @@ class AnimalTests: XCTestCase {
         XCTAssertNil(animal.cryingSound)
         XCTAssertEqual(animal.profileImageData, imageData)
     }
-    
 }
