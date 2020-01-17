@@ -9,13 +9,25 @@
 import Foundation
 
 protocol PetRepository {
-    
+    func fetch(at indexPath: IndexPath, completion: @escaping (Result<Pet, Error>) -> Void)
 }
 
 class PetRepositoryImplementation: PetRepository {
+    
+    // MARK: - Dependencies
+    
     private let storageService: PetStorageService
 
+    // MARK: - Initialization
+    
     init(storageService: PetStorageService) {
         self.storageService = storageService
     }
+    
+    // MARK: - Methods
+    
+    func fetch(at indexPath: IndexPath, completion: @escaping (Result<Pet, Error>) -> Void) {
+        ()
+    }
+    
 }
