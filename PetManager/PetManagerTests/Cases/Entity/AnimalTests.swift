@@ -31,11 +31,11 @@ class AnimalTests: XCTestCase {
         // when
         let animal = Animal(name: name,
                             cryingSound: cryingSound,
-                            imageData: imageData)
+                            profileImageData: imageData)
         // then
         XCTAssertEqual(animal.name, name)
         XCTAssertEqual(animal.cryingSound, cryingSound)
-        XCTAssertEqual(animal.imageData, imageData)
+        XCTAssertEqual(animal.profileImageData, imageData)
     }
     
 }

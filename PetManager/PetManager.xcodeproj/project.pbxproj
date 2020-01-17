@@ -15,6 +15,7 @@
 		0EDB42BE23D194C20020B0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */; };
 		0EDB42C923D194C30020B0EF /* PetManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42C823D194C30020B0EF /* PetManagerTests.swift */; };
 		0EDB42DA23D19CDD0020B0EF /* AnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42D923D19CDD0020B0EF /* AnimalTests.swift */; };
+		0EDB42DF23D1A0360020B0EF /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42DE23D1A0360020B0EF /* Animal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		0EDB42C823D194C30020B0EF /* PetManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetManagerTests.swift; sourceTree = "<group>"; };
 		0EDB42CA23D194C30020B0EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EDB42D923D19CDD0020B0EF /* AnimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTests.swift; sourceTree = "<group>"; };
+		0EDB42DE23D1A0360020B0EF /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		0EDB42B023D194C10020B0EF /* PetManager */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB42DD23D1A0260020B0EF /* Entity */,
 				0EDB42B123D194C10020B0EF /* AppDelegate.swift */,
 				0EDB42B323D194C10020B0EF /* SceneDelegate.swift */,
 				0EDB42B523D194C10020B0EF /* ViewController.swift */,
@@ -116,6 +119,14 @@
 				0EDB42DB23D19CE40020B0EF /* Entity */,
 			);
 			path = Cases;
+			sourceTree = "<group>";
+		};
+		0EDB42DD23D1A0260020B0EF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB42DE23D1A0360020B0EF /* Animal.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EDB42B623D194C10020B0EF /* ViewController.swift in Sources */,
+				0EDB42DF23D1A0360020B0EF /* Animal.swift in Sources */,
 				0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */,
 				0EDB42B423D194C10020B0EF /* SceneDelegate.swift in Sources */,
 			);
