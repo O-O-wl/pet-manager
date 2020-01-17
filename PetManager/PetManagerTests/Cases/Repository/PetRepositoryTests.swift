@@ -12,7 +12,7 @@ class PetRepositoryTests: XCTestCase {
     
     // given
     var pets: [Pet]!
-    var stoageService: PetStoageService!
+    var storageService: PetStorageService!
     
     var sut: PetRepository!
     
@@ -21,14 +21,14 @@ class PetRepositoryTests: XCTestCase {
         
         pets = [Pet(name: "테스트용 고양이", type: .cat),
                 Pet(name: "테스트용 강아지", type: .dog)]
-        stoageService = MockPetStoageService(pets: pets)
+        storageService = MockPetStorageService(pets: pets)
         
-        sut = PetRepositoryImplementation(stoageService: stoageService)
+        sut = PetRepositoryImplementation(storageService: storageService)
     }
     
     override func tearDown() {
         pets = nil
-        stoageService = nil
+        storageService = nil
         sut = nil
         
         super.tearDown()

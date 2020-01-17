@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol PetStoageService {
+protocol PetStorageService {
     func load(completion: @escaping (Result<[Pet], Error>) -> Void)
     func save(_ pets: [Pet], completion: @escaping (Result<Void, Error>) -> Void)
 }
 
-class PetStoagServiceImplementation: PetStoageService {
+class PetStoragServiceImplementation: PetStorageService {
     
     // MARK: - Properties
     
@@ -50,12 +50,12 @@ class PetStoagServiceImplementation: PetStoageService {
 
 // MARK: - Singletone
 
-extension PetStoagServiceImplementation {
+extension PetStoragServiceImplementation {
     static let fileURL: URL = {
         let documentationDirectory = FileManager.default.urls(for: .documentationDirectory, in: .userDomainMask).first!
         let fileName = "pets"
         return documentationDirectory.appendingPathComponent(fileName)
     }()
     
-    static let shared = PetStoagServiceImplementation(fileURL: fileURL)
+    static let shared = PetStoragServiceImplementation(fileURL: fileURL)
 }

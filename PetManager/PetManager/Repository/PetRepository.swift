@@ -13,9 +13,9 @@ protocol PetRepository {
 }
 
 class PetRepositoryImplementation: PetRepository {
-    private let stoageService: PetStoageService
-    
-    init(stoageService: PetStoageService) {
-        self.stoageService = stoageService
+    private let storageService: PetStorageService
+
+    init(storageService: PetStorageService) {
+        self.storageService = storageService
     }
 }

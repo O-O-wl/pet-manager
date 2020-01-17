@@ -8,7 +8,7 @@
 @testable import PetManager
 import Foundation
 
-class MockPetStoageService: PetStoageService {
+class MockPetStorageService: PetStorageService {
     
     // MARK: - Dependecies
     
