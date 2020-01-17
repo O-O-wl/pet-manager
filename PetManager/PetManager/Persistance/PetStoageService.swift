@@ -23,6 +23,10 @@ class PetStoagServiceImplementation: PetStoageService {
         return documentURL.appendingPathComponent(fileName)
     }()
     
+    // MARK: - Initalization
+    
+    private init() {}
+    
     // MARK: - Methods
     
     func load(completion: @escaping (Result<[Pet], Error>) -> Void) {
@@ -43,4 +47,10 @@ class PetStoagServiceImplementation: PetStoageService {
             completion(.failure(error))
         }
     }
+}
+
+// MARK: - Singletone
+
+extension PetStoagServiceImplementation {
+    static let shared = PetStoagServiceImplementation()
 }
