@@ -30,5 +30,4 @@ class PetTests: XCTestCase {
         XCTAssertEqual(pet.name, name)
         XCTAssertEqual(pet.type, type)
     }
-
 }
