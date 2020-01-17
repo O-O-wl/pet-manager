@@ -61,7 +61,21 @@ class PetRepositoryTests: XCTestCase {
     }
     
     func test_fetch_pet_failure_when_out_of_index() {
+        // given
+        let fetchFailureExpectation = expectation(description: "fetch failure")
+        let outOfIndexPath = IndexPath(row: pets.count, section: 0)
         
+        // when
+        sut.fetch(at: outOfIndexPath) { result in
+            switch result {
+            case .success(_):
+                ()
+            case .failure(_):
+                fetchFailureExpectation.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
     func test_add_pet_test() {
