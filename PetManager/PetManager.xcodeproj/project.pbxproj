@@ -26,6 +26,7 @@
 		0EDB430823D254610020B0EF /* PetStoageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430723D254610020B0EF /* PetStoageServiceTests.swift */; };
 		0EDB430D23D260DF0020B0EF /* PetRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430C23D260DF0020B0EF /* PetRepositoryTests.swift */; };
 		0EDB431023D261B20020B0EF /* MockPetStoageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430F23D261B20020B0EF /* MockPetStoageService.swift */; };
+		0EDB431423D264700020B0EF /* PetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431323D264700020B0EF /* PetRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		0EDB430723D254610020B0EF /* PetStoageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetStoageServiceTests.swift; path = PetManagerTests/Cases/Persistance/PetStoageServiceTests.swift; sourceTree = SOURCE_ROOT; };
 		0EDB430C23D260DF0020B0EF /* PetRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetRepositoryTests.swift; path = PetManagerTests/Cases/Repository/PetRepositoryTests.swift; sourceTree = SOURCE_ROOT; };
 		0EDB430F23D261B20020B0EF /* MockPetStoageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetStoageService.swift; sourceTree = "<group>"; };
+		0EDB431323D264700020B0EF /* PetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		0EDB42B023D194C10020B0EF /* PetManager */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB431223D264580020B0EF /* Repository */,
 				0EDB42ED23D22AF60020B0EF /* Persistance */,
 				0EDB42E023D1AE6E0020B0EF /* Resource */,
 				0EDB42DD23D1A0260020B0EF /* Entity */,
@@ -231,6 +234,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		0EDB431223D264580020B0EF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB431323D264700020B0EF /* PetRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -341,6 +352,7 @@
 				0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */,
 				0EDB42B423D194C10020B0EF /* SceneDelegate.swift in Sources */,
 				0EDB42EF23D22B790020B0EF /* PetStoageService.swift in Sources */,
+				0EDB431423D264700020B0EF /* PetRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
