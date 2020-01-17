@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Animal {
+struct Animal: Codable {
     let name: String
     let cryingSound: String?
     let profileImageData: Data
