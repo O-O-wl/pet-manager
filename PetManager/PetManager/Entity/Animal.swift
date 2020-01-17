@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Animal {
+    let name: String
+    let cryingSound: String?
+    let profileImageData: Data
+}
