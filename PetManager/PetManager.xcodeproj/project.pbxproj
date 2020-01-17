@@ -24,7 +24,6 @@
 		0EDB42EF23D22B790020B0EF /* PetStoageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42EE23D22B790020B0EF /* PetStoageService.swift */; };
 		0EDB430423D253AA0020B0EF /* pets.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB430323D253AA0020B0EF /* pets.json */; };
 		0EDB430823D254610020B0EF /* PetStoageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430723D254610020B0EF /* PetStoageServiceTests.swift */; };
-		0EDB430A23D255C70020B0EF /* PetStorageService+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430923D255C70020B0EF /* PetStorageService+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +58,6 @@
 		0EDB42EE23D22B790020B0EF /* PetStoageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStoageService.swift; sourceTree = "<group>"; };
 		0EDB430323D253AA0020B0EF /* pets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pets.json; sourceTree = "<group>"; };
 		0EDB430723D254610020B0EF /* PetStoageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetStoageServiceTests.swift; path = PetManagerTests/Cases/Persistance/PetStoageServiceTests.swift; sourceTree = SOURCE_ROOT; };
-		0EDB430923D255C70020B0EF /* PetStorageService+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetStorageService+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +196,6 @@
 		0EDB430623D2542B0020B0EF /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
-				0EDB430923D255C70020B0EF /* PetStorageService+.swift */,
 				0EDB430723D254610020B0EF /* PetStoageServiceTests.swift */,
 			);
 			path = Persistance;
@@ -322,7 +319,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EDB430823D254610020B0EF /* PetStoageServiceTests.swift in Sources */,
-				0EDB430A23D255C70020B0EF /* PetStorageService+.swift in Sources */,
 				0EDB42C923D194C30020B0EF /* PetManagerTests.swift in Sources */,
 				0EDB42EC23D1BFEB0020B0EF /* Animal+.swift in Sources */,
 				0EDB42DA23D19CDD0020B0EF /* AnimalTests.swift in Sources */,
