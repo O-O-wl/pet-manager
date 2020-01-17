@@ -15,3 +15,9 @@ enum AnimalImage {
     static let lizard = #imageLiteral(resourceName: "lizard")
 }
 
+enum AnimalImageData {
+    static let dog = AnimalImage.dog.pngData()!
+    static let cat = AnimalImage.cat.pngData()!
+    static let parrot = AnimalImage.parrot.pngData()!
+    static let lizard = AnimalImage.lizard.pngData()!
+}
