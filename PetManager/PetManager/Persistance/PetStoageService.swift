@@ -17,15 +17,13 @@ class PetStoagServiceImplementation: PetStoageService {
     
     // MARK: - Properties
     
-    private let fileURL: URL = {
-        let documentURL = FileManager.default.urls(for: .documentationDirectory, in: .userDomainMask).first!
-        let fileName = "pets"
-        return documentURL.appendingPathComponent(fileName)
-    }()
+    private let fileURL: URL
     
     // MARK: - Initalization
     
-    private init() {}
+    init(fileURL: URL) {
+        self.fileURL = fileURL
+    }
     
     // MARK: - Methods
     
@@ -43,6 +41,7 @@ class PetStoagServiceImplementation: PetStoageService {
         do {
             let data = try JSONEncoder().encode(pets)
             try data.write(to: fileURL)
+            completion(.success(()))
         } catch {
             completion(.failure(error))
         }
@@ -52,5 +51,11 @@ class PetStoagServiceImplementation: PetStoageService {
 // MARK: - Singletone
 
 extension PetStoagServiceImplementation {
-    static let shared = PetStoagServiceImplementation()
+    static let fileURL: URL = {
+        let documentationDirectory = FileManager.default.urls(for: .documentationDirectory, in: .userDomainMask).first!
+        let fileName = "pets"
+        return documentationDirectory.appendingPathComponent(fileName)
+    }()
+    
+    static let shared = PetStoagServiceImplementation(fileURL: fileURL)
 }
