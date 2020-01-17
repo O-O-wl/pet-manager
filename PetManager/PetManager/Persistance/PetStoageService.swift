@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol PetStoageService {
+    func load(completion: @escaping (Result<[Pet], Error>) -> Void)
+    func save(_ pets: [Pet], completion: @escaping (Result<Void, Error>) -> Void)
+}
