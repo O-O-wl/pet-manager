@@ -18,4 +18,6 @@ extension Animal {
     static let cat = Animal(name: "고양이", cryingSound: "야 옹", profileImageData: AnimalImageData.cat)
     static let parrot = Animal(name: "앵무새", cryingSound: "짹 짹", profileImageData: AnimalImageData.parrot)
     static let lizard = Animal(name: "도마뱀", cryingSound: nil, profileImageData: AnimalImageData.lizard)
+    
+    static let defaultCases = [Animal.dog, Animal.cat, Animal.parrot, Animal.lizard]
 }
