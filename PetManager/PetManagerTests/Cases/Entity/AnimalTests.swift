@@ -52,9 +52,8 @@ class AnimalTests: XCTestCase {
                             profileImageData: imageData)
         // then
         XCTAssertEqual(animal.name, name)
-        XCTAssertEqual(animal.cryingSound, cryingSound)
+        XCTAssertNil(animal.cryingSound)
         XCTAssertEqual(animal.profileImageData, imageData)
     }
-    
     
 }
