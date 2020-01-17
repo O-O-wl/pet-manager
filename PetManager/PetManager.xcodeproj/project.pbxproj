@@ -140,7 +140,6 @@
 		0EDB42DC23D19CF60020B0EF /* Cases */ = {
 			isa = PBXGroup;
 			children = (
-				0EDB431123D262BD0020B0EF /* New Group */,
 				0EDB430B23D260C30020B0EF /* Repository */,
 				0EDB430623D2542B0020B0EF /* Persistance */,
 				0EDB42C823D194C30020B0EF /* PetManagerTests.swift */,
@@ -225,13 +224,6 @@
 				0EDB430F23D261B20020B0EF /* MockPetStorageService.swift */,
 			);
 			path = Persistance;
-			sourceTree = "<group>";
-		};
-		0EDB431123D262BD0020B0EF /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		0EDB431223D264580020B0EF /* Repository */ = {

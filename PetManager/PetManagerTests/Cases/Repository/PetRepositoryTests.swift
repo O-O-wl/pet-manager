@@ -10,11 +10,13 @@ import XCTest
 
 class PetRepositoryTests: XCTestCase {
     
-    // given
+    // MARK: - Given Properties
+    
     var pets: [Pet]!
     var storageService: PetStorageService!
     
     var sut: PetRepository!
+    
     
     override func setUp() {
         super.setUp()
@@ -32,5 +34,37 @@ class PetRepositoryTests: XCTestCase {
         sut = nil
         
         super.tearDown()
+    }
+    
+    // MARK: - Tests
+    
+    func test_fetch_pet_success() {
+        // given
+        let expectedPet = pets.first!
+        let fetchSuccessExpectation = expectation(description: "fetch success")
+        let indexPath = IndexPath(row: 0, section: 0)
+        
+        // when
+        sut.fetch(at: indexPath) { result in
+            switch result {
+            case .success(let pet):
+                fetchSuccessExpectation.fulfill()
+                
+                // then
+                XCTAssertEqual(pet, expectedPet)
+            case .failure(_):
+                ()
+            }
+        }
+        
+        waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+    func test_fetch_pet_failure_when_out_of_index() {
+        
+    }
+    
+    func test_add_pet_test() {
+        
     }
 }
