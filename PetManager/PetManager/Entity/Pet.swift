@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Pet {
+struct Pet: Codable {
     let name: String
     let type: Animal
 }
