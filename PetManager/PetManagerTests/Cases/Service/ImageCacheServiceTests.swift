@@ -40,9 +40,13 @@ class ImageCacheServiceTests: XCTestCase {
     }
     
     func test_cache_save_success() {
-    }
-    
-    func test_cache_save_failure() {
+        //given
+        let expectedResult: Result<Void, Error> = .success(())
         
+        //when
+        let addResult = sut.add(sampleImage1, forKey: sampleImageKey1)
+        
+        //then
+        XCTAssertEqual(addResult, expectedResult)
     }
 }
