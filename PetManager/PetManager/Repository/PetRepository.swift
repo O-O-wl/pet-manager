@@ -23,8 +23,7 @@ class PetRepositoryImplementation: PetRepository {
     
     // MARK: - Properties
     
-    private var pets: [Pet] = []
-    private let requestQueue = DispatchQueue(label: "Request Queue")
+    private var pets: [Pet] = []ㄴ
     
     // MARK: - Initialization
     
@@ -53,7 +52,7 @@ class PetRepositoryImplementation: PetRepository {
     
     func modify(itemAt index: Int, to newPet: Pet, completion: @escaping (Result<Void, Error>) -> Void) {
         guard index < pets.count else {
-            completion(.failure(RepositoryError.outOfRange))
+            completion(.failure(RepositoryError.badRequest))
             return
         }
         
@@ -63,7 +62,7 @@ class PetRepositoryImplementation: PetRepository {
     
     func delete(itemAt index: Int, completion: @escaping (Result<Void, Error>) -> Void) {
         guard index < pets.count else {
-            completion(.failure(RepositoryError.outOfRange))
+            completion(.failure(RepositoryError.badRequest))
             return
         }
         
