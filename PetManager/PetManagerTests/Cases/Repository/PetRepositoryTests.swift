@@ -94,9 +94,31 @@ class PetRepositoryTests: XCTestCase {
             case .success(let pets):
                 updateSuccessExpectation.fulfill()
                 
+                // then
                 XCTAssertEqual(self.storageService.pets[index], newPet)
             case .failure(_):
                 ()
+            }
+        }
+        waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+    func test_modify_pet_failure() {
+        // given
+        let index = 3
+        let newPet = Pet(name: "업데이트된 고양이", type: .cat)
+        let updateFailureExpectation = expectation(description: "update failure")
+    
+        // when
+        sut.modify(itemAt: index, to: newPet) {
+            switch result {
+            case .success(_):
+                ()
+            case .failure(let error):
+                updateFailureExpectation.fulfill()
+                
+                // then
+                XCTAssertEqual(error, RepositoryError.outOfRange)
             }
         }
         waitForExpectations(timeout: 2, handler: nil)
