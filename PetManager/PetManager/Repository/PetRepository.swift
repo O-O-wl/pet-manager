@@ -9,7 +9,8 @@
 import Foundation
 
 protocol PetRepository {
-    func fetch(at indexPath: IndexPath, completion: @escaping (Result<Pet, Error>) -> Void)
+    func add(completion: @escaping (Result<Void, Error>) -> Void)
+    func fetch(completion: @escaping (Result<[Pet], Error>) -> Void)
 }
 
 class PetRepositoryImplementation: PetRepository {
@@ -28,44 +29,17 @@ class PetRepositoryImplementation: PetRepository {
         self.storageService = storageService
     }
     
-    // MARK: - Methods
+    // MARK: - CRUD
     
-    func fetch(at indexPath: IndexPath, completion: @escaping (Result<Pet, Error>) -> Void) {
-        let index = indexPath.row
-        if pets.count <= index {
-            reload(completion: { result in
-                switch result {
-                case .success(_):
-                    if self.pets.count > index {
-                        completion(.success(self.pets[index]))
-                    } else {
-                        completion(.failure(RepositoryError.outOfRange))
-                    }
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            })
-        } else {
-            completion(.success(self.pets[index]))
-        }
-    }
-    
-    private func reload(completion: @escaping (Result<Void, Error>) -> Void) {
-        storageService.load { [weak self] result in
+    func fetch(completion: @escaping (Result<[Pet], Error>) -> Void) {
+        storageService.load { result in
             switch result {
             case .success(let pets):
-                self?.pets = pets
-                completion(.success(()))
+                completion(.success(pets))
             case .failure(let error):
                 completion(.failure(error))
             }
         }
     }
     
-}
-
-// MARK: - RepositoryError
-
-enum RepositoryError: Error {
-    case outOfRange
 }

@@ -38,20 +38,39 @@ class PetRepositoryTests: XCTestCase {
     
     // MARK: - Tests
     
+    func test_add_pet() {
+        // given
+        let expectedPet = Pet(name: "테스트용 도마뱀", type: .lizard)
+        let addSuccessExpectation = expectation(description: "add success")
+        
+        //when
+        sut.add(expectedPet) { result in
+            switch result {
+            case .success(_):
+                addSuccessExpectation.fulfill()
+            case .failure(_):
+                ()
+            }
+        }
+        
+        waitForExpectations(timeout: 2, handler: nil)
+    }
+    
     func test_fetch_pet_success() {
         // given
         let expectedPet = pets.first!
+        let expectedPet2 = pets.last!
         let fetchSuccessExpectation = expectation(description: "fetch success")
-        let indexPath = IndexPath(row: 0, section: 0)
         
         // when
-        sut.fetch(at: indexPath) { result in
+        sut.fetch{ result in
             switch result {
-            case .success(let pet):
+            case .success(let pets):
                 fetchSuccessExpectation.fulfill()
                 
                 // then
-                XCTAssertEqual(pet, expectedPet)
+                XCTAssertEqual(pets[0], expectedPet)
+                XCTAssertEqual(pets[1], expectedPet2)
             case .failure(_):
                 ()
             }
@@ -60,25 +79,4 @@ class PetRepositoryTests: XCTestCase {
         waitForExpectations(timeout: 2, handler: nil)
     }
     
-    func test_fetch_pet_failure_when_out_of_index() {
-        // given
-        let fetchFailureExpectation = expectation(description: "fetch failure")
-        let outOfIndexPath = IndexPath(row: pets.count, section: 0)
-        
-        // when
-        sut.fetch(at: outOfIndexPath) { result in
-            switch result {
-            case .success(_):
-                ()
-            case .failure(_):
-                fetchFailureExpectation.fulfill()
-            }
-        }
-        
-        waitForExpectations(timeout: 2, handler: nil)
-    }
-    
-    func test_add_pet_test() {
-        
-    }
 }
