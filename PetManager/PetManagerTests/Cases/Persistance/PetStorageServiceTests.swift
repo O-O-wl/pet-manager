@@ -8,18 +8,18 @@
 @testable import PetManager
 import XCTest
 
-class PetStoageServiceTests: XCTestCase {
+class PetStorageServiceTests: XCTestCase {
     
-    var sut: PetStoagServiceImplementation!
+    var sut: PetStoragServiceImplementation!
     
     override func setUp() {
         super.setUp()
         
-        let bundle = Bundle(for: PetStoageServiceTests.self)
+        let bundle = Bundle(for: PetStorageServiceTests.self)
         let fileName = "pets"
         let fakeFileURL =  bundle.url(forResource: fileName, withExtension: "json")!
         
-        sut = PetStoagServiceImplementation(fileURL: fakeFileURL)
+        sut = PetStoragServiceImplementation(fileURL: fakeFileURL)
     }
     
     override func tearDown() {

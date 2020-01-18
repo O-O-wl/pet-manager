@@ -21,9 +21,14 @@
 		0EDB42E623D1B7160020B0EF /* PetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42E523D1B7160020B0EF /* PetTests.swift */; };
 		0EDB42E823D1BBDE0020B0EF /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42E723D1BBDE0020B0EF /* Pet.swift */; };
 		0EDB42EC23D1BFEB0020B0EF /* Animal+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42EB23D1BFEB0020B0EF /* Animal+.swift */; };
-		0EDB42EF23D22B790020B0EF /* PetStoageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42EE23D22B790020B0EF /* PetStoageService.swift */; };
+		0EDB42EF23D22B790020B0EF /* PetStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42EE23D22B790020B0EF /* PetStorageService.swift */; };
 		0EDB430423D253AA0020B0EF /* pets.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB430323D253AA0020B0EF /* pets.json */; };
-		0EDB430823D254610020B0EF /* PetStoageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430723D254610020B0EF /* PetStoageServiceTests.swift */; };
+		0EDB430823D254610020B0EF /* PetStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430723D254610020B0EF /* PetStorageServiceTests.swift */; };
+		0EDB430D23D260DF0020B0EF /* PetRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430C23D260DF0020B0EF /* PetRepositoryTests.swift */; };
+		0EDB431023D261B20020B0EF /* MockPetStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430F23D261B20020B0EF /* MockPetStorageService.swift */; };
+		0EDB431423D264700020B0EF /* PetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431323D264700020B0EF /* PetRepository.swift */; };
+		0EDB431623D268D70020B0EF /* Pet+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431523D268D70020B0EF /* Pet+.swift */; };
+		0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431E23D29E810020B0EF /* RepositoryError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +60,14 @@
 		0EDB42E523D1B7160020B0EF /* PetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTests.swift; sourceTree = "<group>"; };
 		0EDB42E723D1BBDE0020B0EF /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		0EDB42EB23D1BFEB0020B0EF /* Animal+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+.swift"; sourceTree = "<group>"; };
-		0EDB42EE23D22B790020B0EF /* PetStoageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStoageService.swift; sourceTree = "<group>"; };
+		0EDB42EE23D22B790020B0EF /* PetStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorageService.swift; sourceTree = "<group>"; };
 		0EDB430323D253AA0020B0EF /* pets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pets.json; sourceTree = "<group>"; };
-		0EDB430723D254610020B0EF /* PetStoageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetStoageServiceTests.swift; path = PetManagerTests/Cases/Persistance/PetStoageServiceTests.swift; sourceTree = SOURCE_ROOT; };
+		0EDB430723D254610020B0EF /* PetStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetStorageServiceTests.swift; path = PetManagerTests/Cases/Persistance/PetStorageServiceTests.swift; sourceTree = SOURCE_ROOT; };
+		0EDB430C23D260DF0020B0EF /* PetRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetRepositoryTests.swift; path = PetManagerTests/Cases/Repository/PetRepositoryTests.swift; sourceTree = SOURCE_ROOT; };
+		0EDB430F23D261B20020B0EF /* MockPetStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetStorageService.swift; sourceTree = "<group>"; };
+		0EDB431323D264700020B0EF /* PetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRepository.swift; sourceTree = "<group>"; };
+		0EDB431523D268D70020B0EF /* Pet+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+.swift"; sourceTree = "<group>"; };
+		0EDB431E23D29E810020B0EF /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,8 @@
 		0EDB42B023D194C10020B0EF /* PetManager */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB432023D29ED60020B0EF /* Common */,
+				0EDB431223D264580020B0EF /* Repository */,
 				0EDB42ED23D22AF60020B0EF /* Persistance */,
 				0EDB42E023D1AE6E0020B0EF /* Resource */,
 				0EDB42DD23D1A0260020B0EF /* Entity */,
@@ -133,6 +145,7 @@
 		0EDB42DC23D19CF60020B0EF /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB430B23D260C30020B0EF /* Repository */,
 				0EDB430623D2542B0020B0EF /* Persistance */,
 				0EDB42C823D194C30020B0EF /* PetManagerTests.swift */,
 				0EDB42DB23D19CE40020B0EF /* Entity */,
@@ -155,7 +168,6 @@
 				0EDB42B723D194C10020B0EF /* Main.storyboard */,
 				0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */,
 				0EDB42BA23D194C20020B0EF /* Assets.xcassets */,
-				0EDB42E123D1AE880020B0EF /* ImageAsset.swift */,
 				0EDB42E323D1B1940020B0EF /* Images.xcassets */,
 			);
 			path = Resource;
@@ -164,6 +176,7 @@
 		0EDB42E923D1BCE70020B0EF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB430E23D261930020B0EF /* Persistance */,
 				0EDB42EA23D1BFD90020B0EF /* Extension */,
 			);
 			path = Helper;
@@ -173,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				0EDB42EB23D1BFEB0020B0EF /* Animal+.swift */,
+				0EDB431523D268D70020B0EF /* Pet+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -180,7 +194,7 @@
 		0EDB42ED23D22AF60020B0EF /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
-				0EDB42EE23D22B790020B0EF /* PetStoageService.swift */,
+				0EDB42EE23D22B790020B0EF /* PetStorageService.swift */,
 			);
 			path = Persistance;
 			sourceTree = "<group>";
@@ -196,9 +210,42 @@
 		0EDB430623D2542B0020B0EF /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
-				0EDB430723D254610020B0EF /* PetStoageServiceTests.swift */,
+				0EDB430723D254610020B0EF /* PetStorageServiceTests.swift */,
 			);
 			path = Persistance;
+			sourceTree = "<group>";
+		};
+		0EDB430B23D260C30020B0EF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB430C23D260DF0020B0EF /* PetRepositoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		0EDB430E23D261930020B0EF /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB430F23D261B20020B0EF /* MockPetStorageService.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		0EDB431223D264580020B0EF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB431323D264700020B0EF /* PetRepository.swift */,
+				0EDB431E23D29E810020B0EF /* RepositoryError.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		0EDB432023D29ED60020B0EF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB42E123D1AE880020B0EF /* ImageAsset.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +357,9 @@
 				0EDB42E823D1BBDE0020B0EF /* Pet.swift in Sources */,
 				0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */,
 				0EDB42B423D194C10020B0EF /* SceneDelegate.swift in Sources */,
-				0EDB42EF23D22B790020B0EF /* PetStoageService.swift in Sources */,
+				0EDB42EF23D22B790020B0EF /* PetStorageService.swift in Sources */,
+				0EDB431423D264700020B0EF /* PetRepository.swift in Sources */,
+				0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,11 +367,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EDB430823D254610020B0EF /* PetStoageServiceTests.swift in Sources */,
+				0EDB431023D261B20020B0EF /* MockPetStorageService.swift in Sources */,
+				0EDB430823D254610020B0EF /* PetStorageServiceTests.swift in Sources */,
 				0EDB42C923D194C30020B0EF /* PetManagerTests.swift in Sources */,
 				0EDB42EC23D1BFEB0020B0EF /* Animal+.swift in Sources */,
 				0EDB42DA23D19CDD0020B0EF /* AnimalTests.swift in Sources */,
+				0EDB431623D268D70020B0EF /* Pet+.swift in Sources */,
 				0EDB42E623D1B7160020B0EF /* PetTests.swift in Sources */,
+				0EDB430D23D260DF0020B0EF /* PetRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
