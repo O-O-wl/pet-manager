@@ -28,6 +28,7 @@
 		0EDB431623D268D70020B0EF /* Pet+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431523D268D70020B0EF /* Pet+.swift */; };
 		0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431E23D29E810020B0EF /* RepositoryError.swift */; };
 		0EDB432423D2A4C30020B0EF /* PetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432323D2A4C30020B0EF /* PetListViewController.swift */; };
+		0EDB432923D2A9BB0020B0EF /* AssetImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		0EDB431523D268D70020B0EF /* Pet+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+.swift"; sourceTree = "<group>"; };
 		0EDB431E23D29E810020B0EF /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		0EDB432323D2A4C30020B0EF /* PetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListViewController.swift; sourceTree = "<group>"; };
+		0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssetImageServiceTests.swift; path = PetManagerTests/Cases/Service/AssetImageServiceTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		0EDB42DC23D19CF60020B0EF /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB432523D2A9660020B0EF /* Service */,
 				0EDB430B23D260C30020B0EF /* Repository */,
 				0EDB430623D2542B0020B0EF /* Persistance */,
 				0EDB42C823D194C30020B0EF /* PetManagerTests.swift */,
@@ -259,6 +262,14 @@
 				0EDB432323D2A4C30020B0EF /* PetListViewController.swift */,
 			);
 			path = PetList;
+			sourceTree = "<group>";
+		};
+		0EDB432523D2A9660020B0EF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +397,7 @@
 				0EDB42DA23D19CDD0020B0EF /* AnimalTests.swift in Sources */,
 				0EDB431623D268D70020B0EF /* Pet+.swift in Sources */,
 				0EDB42E623D1B7160020B0EF /* PetTests.swift in Sources */,
+				0EDB432923D2A9BB0020B0EF /* AssetImageServiceTests.swift in Sources */,
 				0EDB430D23D260DF0020B0EF /* PetRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
