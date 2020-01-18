@@ -8,17 +8,6 @@
 
 import Foundation
 
-enum RepositoryError: LocalizedError {
-    case outOfRange
-    
-    var errorDescription: String? {
-        switch self {
-        case .outOfRange:
-            return "범위를 벗어난 접근입니다."
-        }
-    }
-}
-
 protocol PetRepository {
     func add(pet: Pet, completion: @escaping (Result<Void, Error>) -> Void)
     func fetch(completion: @escaping (Result<[Pet], Error>) -> Void)
