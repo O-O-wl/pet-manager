@@ -12,6 +12,7 @@ protocol PetRepository {
     func add(pet: Pet, completion: @escaping (Result<Void, Error>) -> Void)
     func fetch(completion: @escaping (Result<[Pet], Error>) -> Void)
     func modify(itemAt index: Int, to newPet: Pet, completion: @escaping (Result<Void, Error>) -> Void)
+    func delete(itemAt index: Int, completion: @escaping (Result<Void, Error>) -> Void)
 }
 
 class PetRepositoryImplementation: PetRepository {
@@ -23,6 +24,7 @@ class PetRepositoryImplementation: PetRepository {
     // MARK: - Properties
     
     private var pets: [Pet] = []
+    private let requestQueue = DispatchQueue(label: "Request Queue")
     
     // MARK: - Initialization
     
@@ -59,4 +61,13 @@ class PetRepositoryImplementation: PetRepository {
         storageService.save(pets, completion: completion)
     }
     
+    func delete(itemAt index: Int, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard index < pets.count else {
+            completion(.failure(RepositoryError.outOfRange))
+            return
+        }
+        
+        pets.remove(at: index)
+        storageService.save(pets, completion: completion)
+    }
 }

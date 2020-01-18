@@ -17,7 +17,6 @@ class PetRepositoryTests: XCTestCase {
     
     var sut: PetRepository!
     
-    
     override func setUp() {
         super.setUp()
         
@@ -34,6 +33,11 @@ class PetRepositoryTests: XCTestCase {
         sut = nil
         
         super.tearDown()
+    }
+    
+    // MARK: - Given
+    func whenSUTHasTwoValues() {
+        sut.fetch { _ in }
     }
     
     // MARK: - Tests
@@ -82,7 +86,8 @@ class PetRepositoryTests: XCTestCase {
     }
     
     func test_modify_pet_success() {
-        // givenX
+        // given
+        whenSUTHasTwoValues()
         let index = 0
         let newPet = Pet(name: "업데이트된 고양이", type: .cat)
         let updateSuccessExpectation = expectation(description: "update success")
@@ -126,18 +131,20 @@ class PetRepositoryTests: XCTestCase {
     }
     
     func test_delete_pet_success() {
-        // givenX
+        // given
+        whenSUTHasTwoValues()
         let index = 0
         let deleteSuccessExpectation = expectation(description: "delete success")
         let expectedPetsCount = 1
+        
         // when
         sut.delete(itemAt: index) { result in
             switch result {
             case .success(_):
-                updateSuccessExpectation.fulfill()
+                deleteSuccessExpectation.fulfill()
                 
                 // then
-                XCTAssertEqual(self.storageService.pet.count, expectedPetsCount)
+                XCTAssertEqual(self.storageService.pets.count, expectedPetsCount)
             case .failure(_):
                 ()
             }
@@ -152,7 +159,7 @@ class PetRepositoryTests: XCTestCase {
         let expectedError = RepositoryError.outOfRange
         
         // when
-        sut.delete(itemAt: index, to: newPet) { result in
+        sut.delete(itemAt: index) { result in
             switch result {
             case .success(_):
                 ()
