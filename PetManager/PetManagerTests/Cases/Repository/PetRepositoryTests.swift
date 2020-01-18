@@ -13,7 +13,7 @@ class PetRepositoryTests: XCTestCase {
     // MARK: - Given Properties
     
     var pets: [Pet]!
-    var storageService: PetStorageService!
+    var storageService: MockPetStorageService!
     
     var sut: PetRepository!
     
@@ -42,7 +42,6 @@ class PetRepositoryTests: XCTestCase {
         // given
         let expectedPet = Pet(name: "테스트용 도마뱀", type: .lizard)
         let addSuccessExpectation = expectation(description: "add success")
-        let fetchSuccessExpectation = expectation(description: "fetch success")
         
         //when
         sut.add(pet: expectedPet) { result in
@@ -50,17 +49,7 @@ class PetRepositoryTests: XCTestCase {
             case .success(_):
                 addSuccessExpectation.fulfill()
                 
-                self.sut.fetch { result in
-                    switch result {
-                    case .success(let pets):
-                        fetchSuccessExpectation.fulfill()
-                        
-                        // then
-                        XCTAssertEqual(pets[2], expectedPet)
-                    case .failure(_):
-                        ()
-                    }
-                }
+                XCTAssertEqual(self.storageService.pets[2], expectedPet)
             case .failure(_):
                 ()
             }
@@ -92,12 +81,24 @@ class PetRepositoryTests: XCTestCase {
         waitForExpectations(timeout: 2, handler: nil)
     }
     
-//    func test_update_pet_success() {
-//        // given
-//        let newPet = Pet(name: "업데이트된 고양이", type: .cat)
-//        let updateSuccessExpectation = expectation(description: "update success")
-//        
-//        // when
-//        sut.modify(itemAt: indexPath)
-//    }
+    func test_modify_pet_success() {
+        // given
+        let index = 0
+        let newPet = Pet(name: "업데이트된 고양이", type: .cat)
+        let updateSuccessExpectation = expectation(description: "update success")
+        let fetchSuccessExpectation = expectation(description: "fetch success")
+        
+        // when
+        sut.modify(itemAt: index, to: newPet) {
+            switch result {
+            case .success(let pets):
+                updateSuccessExpectation.fulfill()
+                
+                XCTAssertEqual(self.storageService.pets[index], newPet)
+            case .failure(_):
+                ()
+            }
+        }
+        waitForExpectations(timeout: 2, handler: nil)
+    }
 }
