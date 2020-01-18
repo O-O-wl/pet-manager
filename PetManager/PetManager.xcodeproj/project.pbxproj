@@ -31,6 +31,7 @@
 		0EDB432923D2A9BB0020B0EF /* AssetImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */; };
 		0EDB432C23D2AAAA0020B0EF /* AssetImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432B23D2AAAA0020B0EF /* AssetImageService.swift */; };
 		0EDB433523D3AEDB0020B0EF /* ImageCacheServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433423D3AEDB0020B0EF /* ImageCacheServiceTests.swift */; };
+		0EDB433723D3CD510020B0EF /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433623D3CD510020B0EF /* ImageCacheService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssetImageServiceTests.swift; path = PetManagerTests/Cases/Service/AssetImageServiceTests.swift; sourceTree = SOURCE_ROOT; };
 		0EDB432B23D2AAAA0020B0EF /* AssetImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetImageService.swift; sourceTree = "<group>"; };
 		0EDB433423D3AEDB0020B0EF /* ImageCacheServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheServiceTests.swift; sourceTree = "<group>"; };
+		0EDB433623D3CD510020B0EF /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				0EDB432B23D2AAAA0020B0EF /* AssetImageService.swift */,
+				0EDB433623D3CD510020B0EF /* ImageCacheService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			files = (
 				0EDB42DF23D1A0360020B0EF /* Animal.swift in Sources */,
 				0EDB42E223D1AE880020B0EF /* ImageAsset.swift in Sources */,
+				0EDB433723D3CD510020B0EF /* ImageCacheService.swift in Sources */,
 				0EDB432423D2A4C30020B0EF /* PetListViewController.swift in Sources */,
 				0EDB42E823D1BBDE0020B0EF /* Pet.swift in Sources */,
 				0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */,

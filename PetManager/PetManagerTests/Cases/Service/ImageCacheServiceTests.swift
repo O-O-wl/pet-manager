@@ -20,16 +20,23 @@ class ImageCacheServiceTests: XCTestCase {
     var sut: ImageCacheService!
     
     override func setUp() {
+        super.setUp()
+        
         sampleImageKey1 = "dog"
         sampleImageKey2 = "cat"
         sampleImage1 = UIImage(named: "dog")
         sampleImage2 = UIImage(named: "cat")
-        
         sut = ImageCacheServiceImplementation()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sampleImageKey1 = nil
+        sampleImageKey2 = nil
+        sampleImage1 = nil
+        sampleImage2 = nil
+        sut = nil
+        
+        super.tearDown()
     }
     
     func test_cache_save_success() {
