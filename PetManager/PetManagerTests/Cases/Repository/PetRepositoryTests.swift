@@ -86,12 +86,11 @@ class PetRepositoryTests: XCTestCase {
         let index = 0
         let newPet = Pet(name: "업데이트된 고양이", type: .cat)
         let updateSuccessExpectation = expectation(description: "update success")
-        let fetchSuccessExpectation = expectation(description: "fetch success")
         
         // when
-        sut.modify(itemAt: index, to: newPet) {
+        sut.modify(itemAt: index, to: newPet) { result in
             switch result {
-            case .success(let pets):
+            case .success(_):
                 updateSuccessExpectation.fulfill()
                 
                 // then
@@ -108,9 +107,10 @@ class PetRepositoryTests: XCTestCase {
         let index = 3
         let newPet = Pet(name: "업데이트된 고양이", type: .cat)
         let updateFailureExpectation = expectation(description: "update failure")
-    
+        let expectedError = RepositoryError.outOfRange
+        
         // when
-        sut.modify(itemAt: index, to: newPet) {
+        sut.modify(itemAt: index, to: newPet) { result in
             switch result {
             case .success(_):
                 ()
@@ -118,7 +118,8 @@ class PetRepositoryTests: XCTestCase {
                 updateFailureExpectation.fulfill()
                 
                 // then
-                XCTAssertEqual(error, RepositoryError.outOfRange)
+                let error = try? XCTUnwrap(error as? RepositoryError)
+                XCTAssertEqual(error, expectedError)
             }
         }
         waitForExpectations(timeout: 2, handler: nil)
