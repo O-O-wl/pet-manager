@@ -44,7 +44,7 @@ class PetRepositoryTests: XCTestCase {
         let addSuccessExpectation = expectation(description: "add success")
         
         //when
-        sut.add(expectedPet) { result in
+        sut.add(pet: expectedPet) { result in
             switch result {
             case .success(_):
                 addSuccessExpectation.fulfill()

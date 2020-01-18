@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PetRepository {
-    func add(completion: @escaping (Result<Void, Error>) -> Void)
+    func add(pet: Pet, completion: @escaping (Result<Void, Error>) -> Void)
     func fetch(completion: @escaping (Result<[Pet], Error>) -> Void)
 }
 
@@ -30,6 +30,11 @@ class PetRepositoryImplementation: PetRepository {
     }
     
     // MARK: - CRUD
+    
+    func add(pet: Pet, completion: @escaping (Result<Void, Error>) -> Void) {
+        pets.append(pet)
+        storageService.save(pets, completion: completion)
+    }
     
     func fetch(completion: @escaping (Result<[Pet], Error>) -> Void) {
         storageService.load { result in
