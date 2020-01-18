@@ -32,7 +32,7 @@ class AssetImageServiceTests: XCTestCase {
         let image = sut.fetchImage(assetName: assetName)
         
         // then
-        XCTAssertEqual(image, UIImage(contentsOfFile: assetName))
+        XCTAssertEqual(image, UIImage(named: assetName))
     }
     
     func test_fetch_image_failure_when_assetName_is_wrong() {

@@ -59,19 +59,18 @@ class PetStorageServiceTests: XCTestCase {
             switch result {
             case .success(_):
                 saveSuccessExpectation.fulfill()
+                self.sut.load { result in
+                    switch result {
+                    case .success(let pets):
+                        loadSuccessExpectation.fulfill()
+                        // then
+                        XCTAssertEqual(pets.count, 1)
+                    case .failure(_):
+                        ()
+                    }
+                }
             case .failure(_):
                 ()
-            }
-            
-            self.sut.load { result in
-                switch result {
-                case .success(let pets):
-                    loadSuccessExpectation.fulfill()
-                    // then
-                    XCTAssertEqual(pets.count, 1)
-                case .failure(_):
-                    ()
-                }
             }
         }
         

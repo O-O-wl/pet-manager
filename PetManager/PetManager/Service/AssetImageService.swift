@@ -14,6 +14,6 @@ protocol AssetImageService {
 
 class AssetImageServiceImplementation: AssetImageService {
     func fetchImage(assetName: String) -> UIImage? {
-        return UIImage(contentsOfFile: assetName)
+        return UIImage(named: assetName)
     }
 }
