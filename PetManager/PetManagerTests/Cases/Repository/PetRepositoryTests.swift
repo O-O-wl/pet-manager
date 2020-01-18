@@ -124,4 +124,46 @@ class PetRepositoryTests: XCTestCase {
         }
         waitForExpectations(timeout: 2, handler: nil)
     }
+    
+    func test_delete_pet_success() {
+        // givenX
+        let index = 0
+        let deleteSuccessExpectation = expectation(description: "delete success")
+        let expectedPetsCount = 1
+        // when
+        sut.delete(itemAt: index) { result in
+            switch result {
+            case .success(_):
+                updateSuccessExpectation.fulfill()
+                
+                // then
+                XCTAssertEqual(self.storageService.pet.count, expectedPetsCount)
+            case .failure(_):
+                ()
+            }
+        }
+        waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+    func test_delete_pet_failure_when_index_out_of_range() {
+        // given
+        let index = 3
+        let deleteFailureExpectation = expectation(description: "delete failure")
+        let expectedError = RepositoryError.outOfRange
+        
+        // when
+        sut.delete(itemAt: index, to: newPet) { result in
+            switch result {
+            case .success(_):
+                ()
+            case .failure(let error):
+                deleteFailureExpectation.fulfill()
+                
+                // then
+                let error = try? XCTUnwrap(error as? RepositoryError)
+                XCTAssertEqual(error, expectedError)
+            }
+        }
+        waitForExpectations(timeout: 2, handler: nil)
+    }
 }
