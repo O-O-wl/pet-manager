@@ -23,7 +23,7 @@ class PetRepositoryImplementation: PetRepository {
     
     // MARK: - Properties
     
-    private var pets: [Pet] = []ㄴ
+    private var pets: [Pet] = []
     
     // MARK: - Initialization
     
