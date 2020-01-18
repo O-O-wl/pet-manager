@@ -27,7 +27,7 @@ class MockPetStorageService: PetStorageService {
     }
     
     func save(_ pets: [Pet], completion: @escaping (Result<Void, Error>) -> Void) {
-        self.pets += pets
+        self.pets = pets
         completion(.success(()))
     }
 }

@@ -49,7 +49,7 @@ class PetRepositoryTests: XCTestCase {
             case .success(_):
                 addSuccessExpectation.fulfill()
                 
-                XCTAssertEqual(self.storageService.pets[2], expectedPet)
+                XCTAssertEqual(self.storageService.pets[0], expectedPet)
             case .failure(_):
                 ()
             }
@@ -82,7 +82,7 @@ class PetRepositoryTests: XCTestCase {
     }
     
     func test_modify_pet_success() {
-        // given
+        // givenX
         let index = 0
         let newPet = Pet(name: "업데이트된 고양이", type: .cat)
         let updateSuccessExpectation = expectation(description: "update success")
@@ -99,10 +99,10 @@ class PetRepositoryTests: XCTestCase {
                 ()
             }
         }
-        waitForExpectations(timeout: 2, handler: nil)
+        waitForExpectations(timeout: 0, handler: nil)
     }
     
-    func test_modify_pet_failure() {
+    func test_modify_pet_failure_when_index_out_of_range() {
         // given
         let index = 3
         let newPet = Pet(name: "업데이트된 고양이", type: .cat)

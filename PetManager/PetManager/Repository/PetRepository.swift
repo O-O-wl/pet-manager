@@ -52,11 +52,22 @@ class PetRepositoryImplementation: PetRepository {
         storageService.load { result in
             switch result {
             case .success(let pets):
+                self.pets = pets
                 completion(.success(pets))
             case .failure(let error):
                 completion(.failure(error))
             }
         }
+    }
+    
+    func modify(itemAt index: Int, to newPet: Pet, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard index < pets.count else {
+            completion(.failure(RepositoryError.outOfRange))
+            return
+        }
+        
+        pets[index] = newPet
+        storageService.save(pets, completion: completion)
     }
     
 }
