@@ -12,7 +12,7 @@ class MockPetStorageService: PetStorageService {
     
     // MARK: - Dependecies
     
-    let pets: [Pet]
+    var pets: [Pet]
     
      // MARK: - Initalization
     
@@ -27,6 +27,7 @@ class MockPetStorageService: PetStorageService {
     }
     
     func save(_ pets: [Pet], completion: @escaping (Result<Void, Error>) -> Void) {
+        self.pets += pets
         completion(.success(()))
     }
 }

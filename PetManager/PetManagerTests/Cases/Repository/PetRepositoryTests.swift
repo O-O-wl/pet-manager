@@ -42,12 +42,25 @@ class PetRepositoryTests: XCTestCase {
         // given
         let expectedPet = Pet(name: "테스트용 도마뱀", type: .lizard)
         let addSuccessExpectation = expectation(description: "add success")
+        let fetchSuccessExpectation = expectation(description: "fetch success")
         
         //when
         sut.add(pet: expectedPet) { result in
             switch result {
             case .success(_):
                 addSuccessExpectation.fulfill()
+                
+                self.sut.fetch { result in
+                    switch result {
+                    case .success(let pets):
+                        fetchSuccessExpectation.fulfill()
+                        
+                        // then
+                        XCTAssertEqual(pets[2], expectedPet)
+                    case .failure(_):
+                        ()
+                    }
+                }
             case .failure(_):
                 ()
             }
@@ -79,4 +92,12 @@ class PetRepositoryTests: XCTestCase {
         waitForExpectations(timeout: 2, handler: nil)
     }
     
+//    func test_update_pet_success() {
+//        // given
+//        let newPet = Pet(name: "업데이트된 고양이", type: .cat)
+//        let updateSuccessExpectation = expectation(description: "update success")
+//        
+//        // when
+//        sut.modify(itemAt: indexPath)
+//    }
 }
