@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B123D194C10020B0EF /* AppDelegate.swift */; };
-		0EDB42B423D194C10020B0EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B323D194C10020B0EF /* SceneDelegate.swift */; };
-		0EDB42B623D194C10020B0EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B523D194C10020B0EF /* ViewController.swift */; };
 		0EDB42B923D194C10020B0EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42B723D194C10020B0EF /* Main.storyboard */; };
 		0EDB42BB23D194C20020B0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BA23D194C20020B0EF /* Assets.xcassets */; };
 		0EDB42BE23D194C20020B0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */; };
@@ -29,6 +27,9 @@
 		0EDB431423D264700020B0EF /* PetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431323D264700020B0EF /* PetRepository.swift */; };
 		0EDB431623D268D70020B0EF /* Pet+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431523D268D70020B0EF /* Pet+.swift */; };
 		0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431E23D29E810020B0EF /* RepositoryError.swift */; };
+		0EDB432423D2A4C30020B0EF /* PetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432323D2A4C30020B0EF /* PetListViewController.swift */; };
+		0EDB432923D2A9BB0020B0EF /* AssetImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */; };
+		0EDB432C23D2AAAA0020B0EF /* AssetImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432B23D2AAAA0020B0EF /* AssetImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +45,6 @@
 /* Begin PBXFileReference section */
 		0EDB42AE23D194C10020B0EF /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDB42B123D194C10020B0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0EDB42B323D194C10020B0EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0EDB42B523D194C10020B0EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0EDB42B823D194C10020B0EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EDB42BA23D194C20020B0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EDB42BD23D194C20020B0EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +67,9 @@
 		0EDB431323D264700020B0EF /* PetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRepository.swift; sourceTree = "<group>"; };
 		0EDB431523D268D70020B0EF /* Pet+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+.swift"; sourceTree = "<group>"; };
 		0EDB431E23D29E810020B0EF /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		0EDB432323D2A4C30020B0EF /* PetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListViewController.swift; sourceTree = "<group>"; };
+		0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssetImageServiceTests.swift; path = PetManagerTests/Cases/Service/AssetImageServiceTests.swift; sourceTree = SOURCE_ROOT; };
+		0EDB432B23D2AAAA0020B0EF /* AssetImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,14 +111,14 @@
 		0EDB42B023D194C10020B0EF /* PetManager */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB432A23D2AA990020B0EF /* Service */,
+				0EDB432123D2A4990020B0EF /* Scene */,
 				0EDB432023D29ED60020B0EF /* Common */,
 				0EDB431223D264580020B0EF /* Repository */,
 				0EDB42ED23D22AF60020B0EF /* Persistance */,
 				0EDB42E023D1AE6E0020B0EF /* Resource */,
 				0EDB42DD23D1A0260020B0EF /* Entity */,
 				0EDB42B123D194C10020B0EF /* AppDelegate.swift */,
-				0EDB42B323D194C10020B0EF /* SceneDelegate.swift */,
-				0EDB42B523D194C10020B0EF /* ViewController.swift */,
 				0EDB42BF23D194C20020B0EF /* Info.plist */,
 			);
 			path = PetManager;
@@ -145,6 +147,7 @@
 		0EDB42DC23D19CF60020B0EF /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB432523D2A9660020B0EF /* Service */,
 				0EDB430B23D260C30020B0EF /* Repository */,
 				0EDB430623D2542B0020B0EF /* Persistance */,
 				0EDB42C823D194C30020B0EF /* PetManagerTests.swift */,
@@ -246,6 +249,38 @@
 				0EDB42E123D1AE880020B0EF /* ImageAsset.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		0EDB432123D2A4990020B0EF /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB432223D2A4A20020B0EF /* PetList */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		0EDB432223D2A4A20020B0EF /* PetList */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB432323D2A4C30020B0EF /* PetListViewController.swift */,
+			);
+			path = PetList;
+			sourceTree = "<group>";
+		};
+		0EDB432523D2A9660020B0EF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0EDB432A23D2AA990020B0EF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB432B23D2AAAA0020B0EF /* AssetImageService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,12 +386,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EDB42B623D194C10020B0EF /* ViewController.swift in Sources */,
 				0EDB42DF23D1A0360020B0EF /* Animal.swift in Sources */,
 				0EDB42E223D1AE880020B0EF /* ImageAsset.swift in Sources */,
+				0EDB432423D2A4C30020B0EF /* PetListViewController.swift in Sources */,
 				0EDB42E823D1BBDE0020B0EF /* Pet.swift in Sources */,
 				0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */,
-				0EDB42B423D194C10020B0EF /* SceneDelegate.swift in Sources */,
+				0EDB432C23D2AAAA0020B0EF /* AssetImageService.swift in Sources */,
 				0EDB42EF23D22B790020B0EF /* PetStorageService.swift in Sources */,
 				0EDB431423D264700020B0EF /* PetRepository.swift in Sources */,
 				0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */,
@@ -374,6 +409,7 @@
 				0EDB42DA23D19CDD0020B0EF /* AnimalTests.swift in Sources */,
 				0EDB431623D268D70020B0EF /* Pet+.swift in Sources */,
 				0EDB42E623D1B7160020B0EF /* PetTests.swift in Sources */,
+				0EDB432923D2A9BB0020B0EF /* AssetImageServiceTests.swift in Sources */,
 				0EDB430D23D260DF0020B0EF /* PetRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
