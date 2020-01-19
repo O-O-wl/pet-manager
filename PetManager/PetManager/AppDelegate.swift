@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storageService = PetStoragServiceImplementation.shared
         
+        let animalTypeProvider = AnimalTypeProviderImplementation()
         let petRepository = PetRepositoryImplementation(storageService: storageService)
         let imageRepository = ImageRepositoryImplementation(cacheService: cacheService,
                                                             assetImageService: assetImageService)
@@ -32,8 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                        imageRepository: imageRepository)
         petListVC.presenter = presenter
         
-        let navigationVC = UINavigationController(rootViewController: petListVC)
-        window?.rootViewController = navigationVC
+        let addPetVC = AddPetViewController()
+        let addPetPresenter = AddPetPresenterImplementation(view: addPetVC,
+                                                            animalTypeProvider: animalTypeProvider,
+                                                            imageRepository: imageRepository,
+                                                            petRepository: petRepository)
+        addPetVC.presenter = addPetPresenter
+//        let navigationVC = UINavigationController(rootViewController: petListVC)
+        window?.rootViewController = addPetVC// navigationVC
+        
+//        petListVC.present(addPetVC, animated: true, completion: nil)
         
         window?.makeKeyAndVisible()
         return true

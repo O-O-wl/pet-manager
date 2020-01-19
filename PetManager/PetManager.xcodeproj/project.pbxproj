@@ -13,6 +13,10 @@
 		0E2232F023D44A9C0072CC1B /* AnimalProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EF23D44A9C0072CC1B /* AnimalProvider.swift */; };
 		0E2232F423D44C590072CC1B /* MockAnimalTypeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232F323D44C590072CC1B /* MockAnimalTypeProvider.swift */; };
 		0E2232F623D453D70072CC1B /* MockAnimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232F523D453D70072CC1B /* MockAnimalView.swift */; };
+		0E2232F823D45EA10072CC1B /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232F723D45EA10072CC1B /* AddPetViewController.swift */; };
+		0E2232FB23D466AF0072CC1B /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232FA23D466AF0072CC1B /* AnimalCell.swift */; };
+		0E2232FD23D466C20072CC1B /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232FC23D466C20072CC1B /* UICollectionView+.swift */; };
+		0E2232FF23D47B6A0072CC1B /* VaildationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232FE23D47B6A0072CC1B /* VaildationError.swift */; };
 		0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B123D194C10020B0EF /* AppDelegate.swift */; };
 		0EDB42BB23D194C20020B0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BA23D194C20020B0EF /* Assets.xcassets */; };
 		0EDB42BE23D194C20020B0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */; };
@@ -72,6 +76,10 @@
 		0E2232EF23D44A9C0072CC1B /* AnimalProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalProvider.swift; sourceTree = "<group>"; };
 		0E2232F323D44C590072CC1B /* MockAnimalTypeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAnimalTypeProvider.swift; sourceTree = "<group>"; };
 		0E2232F523D453D70072CC1B /* MockAnimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAnimalView.swift; sourceTree = "<group>"; };
+		0E2232F723D45EA10072CC1B /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
+		0E2232FA23D466AF0072CC1B /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
+		0E2232FC23D466C20072CC1B /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
+		0E2232FE23D47B6A0072CC1B /* VaildationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaildationError.swift; sourceTree = "<group>"; };
 		0EDB42AE23D194C10020B0EF /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDB42B123D194C10020B0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EDB42BA23D194C20020B0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,7 +153,9 @@
 		0E2232E923D431BF0072CC1B /* AddPet */ = {
 			isa = PBXGroup;
 			children = (
+				0E2232F923D461E30072CC1B /* Cell */,
 				0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */,
+				0E2232F723D45EA10072CC1B /* AddPetViewController.swift */,
 			);
 			path = AddPet;
 			sourceTree = "<group>";
@@ -164,6 +174,14 @@
 				0E2232F323D44C590072CC1B /* MockAnimalTypeProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		0E2232F923D461E30072CC1B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0E2232FA23D466AF0072CC1B /* AnimalCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		0EDB42A523D194C10020B0EF = {
@@ -377,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				0EDB431E23D29E810020B0EF /* RepositoryError.swift */,
+				0E2232FE23D47B6A0072CC1B /* VaildationError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -442,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				0EDB436A23D426BE0020B0EF /* UITableView+.swift */,
+				0E2232FC23D466C20072CC1B /* UICollectionView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -627,16 +647,20 @@
 			files = (
 				0EDB435F23D41AF20020B0EF /* BaseViewController.swift in Sources */,
 				0EDB42DF23D1A0360020B0EF /* Animal.swift in Sources */,
+				0E2232FD23D466C20072CC1B /* UICollectionView+.swift in Sources */,
+				0E2232F823D45EA10072CC1B /* AddPetViewController.swift in Sources */,
 				0EDB42E223D1AE880020B0EF /* ImageAsset.swift in Sources */,
 				0EDB433723D3CD510020B0EF /* ImageCacheService.swift in Sources */,
 				0EDB42E823D1BBDE0020B0EF /* Pet.swift in Sources */,
 				0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */,
 				0E2232F023D44A9C0072CC1B /* AnimalProvider.swift in Sources */,
+				0E2232FF23D47B6A0072CC1B /* VaildationError.swift in Sources */,
 				0EDB432C23D2AAAA0020B0EF /* AssetImageService.swift in Sources */,
 				0EDB434023D3DAF20020B0EF /* ImageRepository.swift in Sources */,
 				0EDB42EF23D22B790020B0EF /* PetStorageService.swift in Sources */,
 				0EDB434A23D3E7C40020B0EF /* PetListViewController.swift in Sources */,
 				0EDB431423D264700020B0EF /* PetRepository.swift in Sources */,
+				0E2232FB23D466AF0072CC1B /* AnimalCell.swift in Sources */,
 				0EDB436B23D426BE0020B0EF /* UITableView+.swift in Sources */,
 				0EDB436523D4225B0020B0EF /* PetCell.swift in Sources */,
 				0EDB436923D426320020B0EF /* Reusable.swift in Sources */,

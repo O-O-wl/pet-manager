@@ -9,12 +9,14 @@
 import UIKit
 
 struct AddRequest {
-    let name: String
-    let typeName: String
+    let name: String?
+    let typeName: String?
 }
 
 protocol AddPetView: AnyObject {
+    var presenter: AddPetPresenter? { get set }
     func display(selectedTypeName: String)
+    func showAlert(message: String)
 }
 
 protocol AnimalView {
@@ -72,8 +74,8 @@ class AddPetPresenterImplementation: AddPetPresenter {
             switch result {
             case .success(let image):
                 view.display(profileImage: image)
-                // FIXME : 에러 핸들링구현
-            case .failure(_): ()
+            case .failure(let error):
+                self.view.showAlert(message: error.localizedDescription)
             }
         }
     }
@@ -86,19 +88,37 @@ class AddPetPresenterImplementation: AddPetPresenter {
     }
     
     func addButtonDidTap(with parameter: AddRequest) {
-        guard let type = animalTypeProvider.provide(for: parameter.typeName) else { return }
-        
-        let pet = Pet(name: parameter.name, type: type)
-        
-        petRepository.add(pet: pet) { result in
-            switch result {
-                // FIXME:
-            case .success(_):
-                ()
-            case .failure(_):
-                ()
-            }
+        do {
+            let pet = try vaild(request: parameter)
+            requestAddtion(pet: pet)
+        } catch {
+            view.showAlert(message: error.localizedDescription)
         }
     }
     
+    func vaild(request: AddRequest) throws -> Pet {
+        guard let petName = request.name,
+            petName.isEmpty == false else {
+                throw VaildationError.unfiledName
+        }
+        
+        guard let typeName = request.typeName,
+            let type = animalTypeProvider.provide(for: typeName) else {
+                throw  VaildationError.invaildType
+        }
+        
+        return Pet(name: petName, type: type)
+    }
+    
+    func requestAddtion(pet: Pet) {
+        petRepository.add(pet: pet) { result in
+            switch result {
+            // FIXME:
+            case .success(_):
+                ()
+            case .failure(let error):
+                self.view.showAlert(message: error.localizedDescription)
+            }
+        }
+    }
 }

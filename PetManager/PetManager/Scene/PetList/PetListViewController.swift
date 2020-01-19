@@ -42,6 +42,8 @@ class PetListViewController: BaseViewController, PetListView {
     // MARK: - Layouts
     
     override func setUpLayout() {
+        super.setUpAttribute()
+        
         view.addSubview(petListTableView)
         
         petListTableView.snp.makeConstraints {
@@ -52,6 +54,8 @@ class PetListViewController: BaseViewController, PetListView {
     // MARK: - Attributes
     
     override func setUpAttribute() {
+        super.setUpAttribute()
+        
         navigationItem.do {
             $0.title = "🐶 나의 펫 목록 🐱"
             $0.rightBarButtonItem = UIBarButtonItem(title: "Add",

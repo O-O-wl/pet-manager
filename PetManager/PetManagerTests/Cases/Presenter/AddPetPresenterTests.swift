@@ -146,5 +146,32 @@ class AddPetPresenterTests: XCTestCase {
         XCTAssertEqual(addionalPet.type.name, expectedAddionalPetTyleName)
     }
     
+    func test_add_button_did_tap_failure_when_name_is_empthy() throws {
+        // given
+        let expectedError = VaildationError.unfiledName
+        
+        let addRequest = AddRequest(name: "",
+                                    typeName: sampleTypeName1!)
+        
+        // when
+        sut.addButtonDidTap(with: addRequest)
+        
+        // then
+        XCTAssertEqual(mockAddPetView.displayedErrorMessage, expectedError.localizedDescription)
+    }
+    
+    func test_add_button_did_tap_failure_when_invaild_type() throws {
+        // given
+        let expectedError = VaildationError.invaildType
+        
+        let addRequest = AddRequest(name: "부엉이",
+                                    typeName: "")
+        
+        // when
+        sut.addButtonDidTap(with: addRequest)
+        
+        // then
+        XCTAssertEqual(mockAddPetView.displayedErrorMessage, expectedError.localizedDescription)
+    }
     
 }
