@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PetListPresenter {
+protocol PetListPresenter: AnyObject {
     var numberOfPets: Int { get }
     func configure(view: PetView, at index: Int)
     func didSelect(at index: Int)
@@ -37,6 +37,8 @@ class PetListPresenterImplementation{
         
         fetchPets()
     }
+    
+    // MARK: - Methods
     
     private func fetchPets() {
         petRepository.fetch { result in

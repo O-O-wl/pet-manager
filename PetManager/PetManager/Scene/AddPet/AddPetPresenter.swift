@@ -20,12 +20,12 @@ protocol AddPetView: UIViewController {
     func dismiss()
 }
 
-protocol AnimalView {
+protocol AnimalView: AnyObject{
     func display(typeName: String)
     func display(profileImage: UIImage)
 }
 
-protocol AddPetPresenter {
+protocol AddPetPresenter: AnyObject {
     var numberOfAnimalTypes: Int { get }
     func configure(view: AnimalView, at index: Int)
     func didSelectType(at index: Int)
@@ -63,7 +63,7 @@ class AddPetPresenterImplementation: AddPetPresenter {
         types = animalTypeProvider.provideAllTypes()
     }
     
-    // MARK: - Action
+    // MARK: - Methods
     
     func configure(view: AnimalView, at index: Int) {
         guard index < types.count else { return }
