@@ -73,7 +73,7 @@ class ImageRepositoryTests: XCTestCase {
         let fetchSuccessExpectation = expectation(description: "fetch success expectation")
         
         // when
-        let result = sut.fetch(for: key1ForCache) { result in
+        sut.fetch(for: key1ForCache) { result in
             switch result {
             case .success(let image):
                 fetchSuccessExpectation.fulfill()
@@ -93,7 +93,7 @@ class ImageRepositoryTests: XCTestCase {
         let fetchSuccessExpectation = expectation(description: "fetch success expectation")
         
         // when
-        let result = sut.fetch(for: key2ForAssetService) { result in
+        sut.fetch(for: key2ForAssetService) { result in
             switch result {
             case .success(let image):
                 fetchSuccessExpectation.fulfill()
@@ -102,6 +102,27 @@ class ImageRepositoryTests: XCTestCase {
                 XCTAssertEqual(image, expectedImage)
             case .failure(_):
                 ()
+            }
+        }
+        waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+    func test_fetch_Image_failure() {
+        // given
+        let unRegisteredKey = "미등록 키"
+        let expectedError = RepositoryError.badRequest
+        let fetchFailureExpectation = expectation(description: "fetch failure expectation")
+        
+        // when
+        sut.fetch(for: unRegisteredKey) { result in
+            switch result {
+            case .success(_):
+                ()
+            case .failure(let error):
+                fetchFailureExpectation.fulfill()
+                
+                // then
+                XCTAssertEqual(error as? RepositoryError, expectedError)
             }
         }
         waitForExpectations(timeout: 2, handler: nil)
