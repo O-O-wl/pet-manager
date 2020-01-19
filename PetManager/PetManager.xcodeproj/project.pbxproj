@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2232E823D430DE0072CC1B /* AddPetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232E723D430DE0072CC1B /* AddPetPresenterTests.swift */; };
 		0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B123D194C10020B0EF /* AppDelegate.swift */; };
 		0EDB42BB23D194C20020B0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BA23D194C20020B0EF /* Assets.xcassets */; };
 		0EDB42BE23D194C20020B0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E2232E723D430DE0072CC1B /* AddPetPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetPresenterTests.swift; sourceTree = "<group>"; };
 		0EDB42AE23D194C10020B0EF /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDB42B123D194C10020B0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EDB42BA23D194C20020B0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				0EDB434E23D3EE9F0020B0EF /* PetListPresenterTests.swift */,
+				0E2232E723D430DE0072CC1B /* AddPetPresenterTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				0EDB435723D3F74E0020B0EF /* MockImageRepository.swift in Sources */,
 				0EDB430823D254610020B0EF /* PetStorageServiceTests.swift in Sources */,
 				0EDB434F23D3EE9F0020B0EF /* PetListPresenterTests.swift in Sources */,
+				0E2232E823D430DE0072CC1B /* AddPetPresenterTests.swift in Sources */,
 				0EDB435523D3F59D0020B0EF /* MockPetRepository.swift in Sources */,
 				0EDB42C923D194C30020B0EF /* PetManagerTests.swift in Sources */,
 				0EDB435C23D3FD310020B0EF /* MockPetListView.swift in Sources */,
