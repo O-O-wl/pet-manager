@@ -11,6 +11,7 @@
 		0E2232EB23D431D10072CC1B /* AddPetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */; };
 		0E2232ED23D43A230072CC1B /* MockAddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EC23D43A230072CC1B /* MockAddPetView.swift */; };
 		0E2232F023D44A9C0072CC1B /* AnimalProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EF23D44A9C0072CC1B /* AnimalProvider.swift */; };
+		0E2232F423D44C590072CC1B /* MockAnimalTypeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232F323D44C590072CC1B /* MockAnimalTypeProvider.swift */; };
 		0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B123D194C10020B0EF /* AppDelegate.swift */; };
 		0EDB42BB23D194C20020B0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BA23D194C20020B0EF /* Assets.xcassets */; };
 		0EDB42BE23D194C20020B0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */; };
@@ -68,6 +69,7 @@
 		0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetPresenter.swift; sourceTree = "<group>"; };
 		0E2232EC23D43A230072CC1B /* MockAddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddPetView.swift; sourceTree = "<group>"; };
 		0E2232EF23D44A9C0072CC1B /* AnimalProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalProvider.swift; sourceTree = "<group>"; };
+		0E2232F323D44C590072CC1B /* MockAnimalTypeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAnimalTypeProvider.swift; sourceTree = "<group>"; };
 		0EDB42AE23D194C10020B0EF /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDB42B123D194C10020B0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EDB42BA23D194C20020B0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			isa = PBXGroup;
 			children = (
 				0E2232EF23D44A9C0072CC1B /* AnimalProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		0E2232F223D44C480072CC1B /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				0E2232F323D44C590072CC1B /* MockAnimalTypeProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -354,6 +364,7 @@
 		0EDB433A23D3D55A0020B0EF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0E2232F223D44C480072CC1B /* Provider */,
 				0EDB433B23D3D56F0020B0EF /* MockAssetImageService.swift */,
 				0EDB433D23D3D76D0020B0EF /* MockImageCacheService.swift */,
 			);
@@ -649,6 +660,7 @@
 				0EDB433E23D3D76D0020B0EF /* MockImageCacheService.swift in Sources */,
 				0E2232ED23D43A230072CC1B /* MockAddPetView.swift in Sources */,
 				0EDB433C23D3D56F0020B0EF /* MockAssetImageService.swift in Sources */,
+				0E2232F423D44C590072CC1B /* MockAnimalTypeProvider.swift in Sources */,
 				0EDB42DA23D19CDD0020B0EF /* AnimalTests.swift in Sources */,
 				0EDB42E623D1B7160020B0EF /* PetTests.swift in Sources */,
 				0EDB432923D2A9BB0020B0EF /* AssetImageServiceTests.swift in Sources */,
