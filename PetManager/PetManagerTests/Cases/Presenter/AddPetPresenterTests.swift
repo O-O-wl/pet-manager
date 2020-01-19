@@ -87,11 +87,22 @@ class AddPetPresenterTests: XCTestCase {
         super.tearDown()
     }
     
+    func test_numberOfAnimalTypes() {
+        // given
+        let expectedNumberofAnimalTypes = 2
+        
+        // then
+        XCTAssertEqual(expectedNumberofAnimalTypes, sut.numberOfAnimalTypes)
+    }
+    
     func test_request_add_pet() throws {
         // given
         let expectedAddionalPetName = "새로 추가된 고양이"
         let expectedAddionalPetTyleName = "고양이"
         let expectedAddionalPetType = Animal.cat
+        let expectedAddionalPetName = "새로 추가된 부엉이"
+        let expectedAddionalPetTyleName = sampleTypeName1!
+        let expectedAddionalPetType = sampleAnimalType1!
         
         let addRequest = AddRequest(name: expectedAddionalPetName,
                                     typeName: expectedAddionalPetTyleName)
