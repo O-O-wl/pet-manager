@@ -16,33 +16,36 @@ struct AddRequest {
 protocol AddPetView: AnyObject {
 }
 
-protocol AnimalTypeView {
+protocol AnimalView {
     func display(typeName: String)
     func display(profileImage: UIImage)
 }
 
 protocol AddPetPresenter {
     var numberOfAnimalTypes: Int { get }
-    func configure(view: AddPetView)
+    func configure(view: AnimalView, at index: Int)
     func didSelectType(at index: Int)
     func addButtonDidTap(with parameter: AddRequest)
 }
 
 class AddPetPresenterImplementation: AddPetPresenter {
-    var numberOfAnimalTypes: Int { return 0 }
     
-    func configure(view: AddPetView) {
-        
-    }
-    
-    func didSelectType(at index: Int) {
-        
-    }
+    // MARK: - Dependencies
     
     private unowned let view: AddPetView
     private let animalTypeProvider: AnimalTypeProvider
     private let imageRepository: ImageRepository
     private let petRepository: PetRepository
+    
+    // MARK: - Properties
+    
+    private var types: [Animal] = []
+    
+    var numberOfAnimalTypes: Int {
+        return types.count
+    }
+    
+    // MARK: - Initialization
     
     init(view: AddPetView,
          animalTypeProvider: AnimalTypeProvider,
@@ -52,6 +55,18 @@ class AddPetPresenterImplementation: AddPetPresenter {
         self.animalTypeProvider = animalTypeProvider
         self.imageRepository = imageRepository
         self.petRepository = petRepository
+        
+        types = animalTypeProvider.provideAllTypes()
+    }
+    
+    // MARK: - Action
+    
+    func configure(view: AnimalView, at index: Int) {
+        
+    }
+    
+    func didSelectType(at index: Int) {
+        
     }
     
     func addButtonDidTap(with parameter: AddRequest) {

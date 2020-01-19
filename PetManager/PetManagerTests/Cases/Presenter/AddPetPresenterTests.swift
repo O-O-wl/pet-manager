@@ -26,6 +26,7 @@ class AddPetPresenterTests: XCTestCase {
     var sampleAnimalType1: Animal!
     var sampleAnimalType2: Animal!
     
+    var mockAnimalView: MockAnimalView!
     var mockAddPetView: MockAddPetView!
     var mockAnimalProvider: MockAnimalTypeProvider!
     var mockImageRepository: MockImageRepository!
@@ -54,6 +55,7 @@ class AddPetPresenterTests: XCTestCase {
                                    cryingSound: sampleCryingSound2,
                                    profileImageAssetName: sampleProfileImageAssetName2)
         
+        mockAnimalView = MockAnimalView()
         mockAddPetView = MockAddPetView()
         mockAnimalProvider = MockAnimalTypeProvider(types: [sampleAnimalType1, sampleAnimalType2])
         let images = [sampleProfileImageAssetName1!: sampleAnimalImage1!,
@@ -78,6 +80,7 @@ class AddPetPresenterTests: XCTestCase {
         sampleAnimalImage2 = nil
         sampleAnimalType1 = nil
         sampleAnimalType2 = nil
+        mockAnimalView = nil
         mockAddPetView = nil
         mockAnimalProvider = nil
         mockImageRepository = nil
@@ -93,6 +96,21 @@ class AddPetPresenterTests: XCTestCase {
         
         // then
         XCTAssertEqual(expectedNumberofAnimalTypes, sut.numberOfAnimalTypes)
+    }
+    
+    func test_configure_view() {
+        // given
+        let index = 0
+        let animal = mockAnimalProvider.provideAllTypes()[index]
+        let expectedTypeName = animal.name
+        let expectedImage = sampleAnimalImage1
+        
+        // when
+        sut.configure(view: mockAnimalView, at: index)
+        
+        //then
+        XCTAssertEqual(mockAnimalView.displayedTypeName, expectedTypeName)
+        XCTAssertEqual(mockAnimalView.displayedImage, expectedImage)
     }
     
     func test_request_add_pet() throws {
