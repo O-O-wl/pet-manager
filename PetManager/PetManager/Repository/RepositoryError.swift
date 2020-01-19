@@ -9,12 +9,12 @@
 import Foundation
 
 enum RepositoryError: LocalizedError {
-    case outOfRange
+    case badRequest
     
     var errorDescription: String? {
         switch self {
-        case .outOfRange:
-            return "범위를 벗어난 접근입니다."
+        case .badRequest:
+            return "잘못된 요청입니다."
         }
     }
 }
