@@ -27,6 +27,8 @@ class AddPetViewController: BaseViewController, AddPetView {
     // MARK: - Layouts
     
     override func setUpLayout() {
+        super.setUpAttribute()
+        
         view.do {
             $0.addSubview(titleLabel)
             $0.addSubview(petNameTextField)
@@ -37,45 +39,52 @@ class AddPetViewController: BaseViewController, AddPetView {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.centerX.equalToSuperview()
+            $0.top.equalToSuperview().inset(50)
+            $0.centerX.equalToSuperview()
         }
         
         petNameTextField.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
         }
         
         animalListLabel.snp.makeConstraints {
-            $0.top.equalTo(petNameTextField.snp.bottom)
+            $0.top.equalTo(petNameTextField.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
         }
         
         selectedAnimalLabel.snp.makeConstraints {
-            $0.top.equalTo(animalListLabel.snp.bottom)
+            $0.top.equalTo(animalListLabel.snp.bottom).offset(5)
             $0.centerX.equalToSuperview()
         }
         
         animalListCollectionView.snp.makeConstraints {
-            $0.top.equalTo(selectedAnimalLabel.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(selectedAnimalLabel.snp.bottom).offset(5)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalToSuperview().dividedBy(4)
         }
         
         addButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview()
-            $0.centerX.equalToSuperview()
+            $0.top.equalTo(animalListCollectionView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
     }
     
     // MARK: - Attributes
     
     override func setUpAttribute() {
+        super.setUpAttribute()
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTap)))
+        
         titleLabel.do {
             $0.text = "펫 등록"
-            $0.font = .systemFont(ofSize: 20)
+            $0.font = .boldSystemFont(ofSize: 20)
         }
         
         petNameTextField.do {
             $0.placeholder = "펫의 이름을 입력해주세요."
+            $0.borderStyle = .roundedRect
         }
         
         animalListLabel.do {
@@ -83,17 +92,21 @@ class AddPetViewController: BaseViewController, AddPetView {
         }
         
         selectedAnimalLabel.do {
-            $0.textColor = .orange
+            $0.textColor = .systemBlue
             $0.font = .systemFont(ofSize: 15)
             $0.text = "---"
         }
         
         animalListCollectionView.do {
             $0.backgroundColor = .white
+            $0.register(cellType: AnimalCell.self)
+            $0.dataSource = self
+            $0.delegate = self
         }
         
         addButton.do {
-            $0.backgroundColor = .blue
+            $0.backgroundColor = .black
+            $0.setTitleColor(.white, for: .normal)
             $0.setTitle("등록", for: .normal)
             $0.layer.cornerRadius = 10
         }
@@ -102,6 +115,72 @@ class AddPetViewController: BaseViewController, AddPetView {
     // MARK: - Action
     
     func display(selectedTypeName: String) {
-        ()
+        selectedAnimalLabel.text = selectedTypeName
+    }
+    
+    @objc func viewDidTap() {
+        view.endEditing(true)
+    }
+    
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension AddPetViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter?.numberOfAnimalTypes ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(with: AnimalCell.self, for: indexPath) else {
+            return AnimalCell()
+        }
+        presenter?.configure(view: cell, at: indexPath.row)
+        return cell
+    }
+    
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension AddPetViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        
+        cell.backgroundColor = .gray
+        UIView.animate(withDuration: 0.3){
+            cell.backgroundColor = .white
+        }
+        presenter?.didSelectType(at: indexPath.item)
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension AddPetViewController: UICollectionViewDelegateFlowLayout {
+    var padding: CGFloat {
+        return 1.0
+    }
+    var itemsPerRow: CGFloat {
+        return CGFloat(animalListCollectionView.numberOfItems(inSection: 0))
+    }
+    var sectionInsets: UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return padding
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem * 1.3)
     }
 }
