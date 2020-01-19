@@ -87,7 +87,9 @@ class PetListViewController: BaseViewController, PetListView {
     // MARK: - Action
     
     func refresh() {
-        petListTableView.reloadData()
+        DispatchQueue.main.async {
+            self.petListTableView.reloadData()
+        }
     }
     
     func showAlert(name: String, cryingSound: String) {
