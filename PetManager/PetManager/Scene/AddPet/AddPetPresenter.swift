@@ -57,6 +57,7 @@ class AddPetPresenterImplementation: AddPetPresenter {
         self.imageRepository = imageRepository
         self.petRepository = petRepository
         
+        // FIXME:
         types = animalTypeProvider.provideAllTypes()
     }
     
@@ -85,7 +86,19 @@ class AddPetPresenterImplementation: AddPetPresenter {
     }
     
     func addButtonDidTap(with parameter: AddRequest) {
+        guard let type = animalTypeProvider.provide(for: parameter.typeName) else { return }
         
+        let pet = Pet(name: parameter.name, type: type)
+        
+        petRepository.add(pet: pet) { result in
+            switch result {
+                // FIXME:
+            case .success(_):
+                ()
+            case .failure(_):
+                ()
+            }
+        }
     }
     
 }
