@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E2232E823D430DE0072CC1B /* AddPetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232E723D430DE0072CC1B /* AddPetPresenterTests.swift */; };
+		0E2232EB23D431D10072CC1B /* AddPetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */; };
 		0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B123D194C10020B0EF /* AppDelegate.swift */; };
 		0EDB42BB23D194C20020B0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BA23D194C20020B0EF /* Assets.xcassets */; };
 		0EDB42BE23D194C20020B0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		0E2232E723D430DE0072CC1B /* AddPetPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetPresenterTests.swift; sourceTree = "<group>"; };
+		0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetPresenter.swift; sourceTree = "<group>"; };
 		0EDB42AE23D194C10020B0EF /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDB42B123D194C10020B0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EDB42BA23D194C20020B0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E2232E923D431BF0072CC1B /* AddPet */ = {
+			isa = PBXGroup;
+			children = (
+				0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */,
+			);
+			path = AddPet;
+			sourceTree = "<group>";
+		};
 		0EDB42A523D194C10020B0EF = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +315,7 @@
 		0EDB432123D2A4990020B0EF /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				0E2232E923D431BF0072CC1B /* AddPet */,
 				0EDB434823D3E79E0020B0EF /* PetList */,
 			);
 			path = Scene;
@@ -602,6 +613,7 @@
 				0EDB436923D426320020B0EF /* Reusable.swift in Sources */,
 				0EDB436723D422B50020B0EF /* BaseView.swift in Sources */,
 				0EDB434C23D3E9200020B0EF /* PetListPresenter.swift in Sources */,
+				0E2232EB23D431D10072CC1B /* AddPetPresenter.swift in Sources */,
 				0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

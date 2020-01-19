@@ -5,7 +5,7 @@
 //  Created by 이동영 on 2020/01/19.
 //  Copyright © 2020 이동영. All rights reserved.
 //
-
+@testable import PetManager
 import XCTest
 
 class AddPetPresenterTests: XCTestCase {
@@ -17,7 +17,7 @@ class AddPetPresenterTests: XCTestCase {
         super.setUp()
         
         mockPetRepository = MockPetRepository(pets: [])
-        sut = AddPetPresenterImplementation(prtRepository: mockPetRepository)
+        sut = AddPetPresenterImplementation(petRepository: mockPetRepository)
     }
 
     override func tearDown() {
@@ -25,6 +25,6 @@ class AddPetPresenterTests: XCTestCase {
         sut = nil
         
         super.tearDown()
-    }ㅎ
+    }
 
 }
