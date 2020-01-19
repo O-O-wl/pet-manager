@@ -112,7 +112,7 @@ class PetRepositoryTests: XCTestCase {
         let index = 3
         let newPet = Pet(name: "업데이트된 고양이", type: .cat)
         let updateFailureExpectation = expectation(description: "update failure")
-        let expectedError = RepositoryError.badRequest
+        let expectedError = RepositoryError.notFound
         
         // when
         sut.modify(itemAt: index, to: newPet) { result in
@@ -156,7 +156,7 @@ class PetRepositoryTests: XCTestCase {
         // given
         let index = 3
         let deleteFailureExpectation = expectation(description: "delete failure")
-        let expectedError = RepositoryError.badRequest
+        let expectedError = RepositoryError.notFound
         
         // when
         sut.delete(itemAt: index) { result in

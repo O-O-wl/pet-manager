@@ -9,11 +9,11 @@
 import Foundation
 
 enum RepositoryError: LocalizedError {
-    case badRequest
+    case notFound
     
     var errorDescription: String? {
         switch self {
-        case .badRequest:
+        case .notFound:
             return "잘못된 요청입니다."
         }
     }

@@ -23,8 +23,4 @@ class ImageCacheServiceImplementation: ImageCacheService {
     func fetch(for key: String) -> UIImage? {
         return cache.object(forKey: key as NSString)
     }
-    
-    func remove(for key: String) {
-        cache.removeObject(forKey: key as NSString)
-    }
 }

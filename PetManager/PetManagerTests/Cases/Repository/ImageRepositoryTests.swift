@@ -148,7 +148,7 @@ class ImageRepositoryTests: XCTestCase {
     func test_fetch_Image_failure() {
         // given
         let unRegisteredKey = "미등록 키"
-        let expectedError = RepositoryError.badRequest
+        let expectedError = RepositoryError.notFound
         let fetchFailureExpectation = expectation(description: "fetch failure expectation")
         
         // when

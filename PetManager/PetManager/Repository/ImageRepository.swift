@@ -40,7 +40,7 @@ class ImageRepositoryImplementation: ImageRepository {
             completion(.success(assetImage))
             return
         }
-        completion(.failure(RepositoryError.badRequest))
+        completion(.failure(RepositoryError.notFound))
     }
     
 }
