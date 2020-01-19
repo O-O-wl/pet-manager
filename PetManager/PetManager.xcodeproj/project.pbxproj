@@ -43,6 +43,7 @@
 		0EDB435F23D41AF20020B0EF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435E23D41AF20020B0EF /* BaseViewController.swift */; };
 		0EDB436523D4225B0020B0EF /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB436423D4225B0020B0EF /* PetCell.swift */; };
 		0EDB436723D422B50020B0EF /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB436623D422B50020B0EF /* BaseView.swift */; };
+		0EDB436923D426320020B0EF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB436823D426320020B0EF /* Reusable.swift */; };
 		E372941DD0DC024202B2624B /* libPods-PetManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F700F8585C3E65CF517BB0F /* libPods-PetManagerTests.a */; };
 		EA0A89175FAE7BB0C5A52414 /* libPods-PetManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43302AF85904BE3AE741646D /* libPods-PetManager.a */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		0EDB435E23D41AF20020B0EF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0EDB436423D4225B0020B0EF /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
 		0EDB436623D422B50020B0EF /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		0EDB436823D426320020B0EF /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		0F700F8585C3E65CF517BB0F /* libPods-PetManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PetManagerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF32960E2681AE0D36197E0 /* Pods-PetManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetManagerTests.release.xcconfig"; path = "Target Support Files/Pods-PetManagerTests/Pods-PetManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 		43302AF85904BE3AE741646D /* libPods-PetManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PetManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +293,7 @@
 			children = (
 				0EDB436023D41DE00020B0EF /* Extension */,
 				0EDB42E123D1AE880020B0EF /* ImageAsset.swift */,
+				0EDB436823D426320020B0EF /* Reusable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				0EDB434A23D3E7C40020B0EF /* PetListViewController.swift in Sources */,
 				0EDB431423D264700020B0EF /* PetRepository.swift in Sources */,
 				0EDB436523D4225B0020B0EF /* PetCell.swift in Sources */,
+				0EDB436923D426320020B0EF /* Reusable.swift in Sources */,
 				0EDB436723D422B50020B0EF /* BaseView.swift in Sources */,
 				0EDB434C23D3E9200020B0EF /* PetListPresenter.swift in Sources */,
 				0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */,
