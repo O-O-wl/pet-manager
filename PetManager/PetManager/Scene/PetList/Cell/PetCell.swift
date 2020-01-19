@@ -43,13 +43,12 @@ class PetCell: UITableViewCell {
         
         nameLabel.snp.makeConstraints {
             $0.leading.equalTo(profileImageView.snp.trailing).offset(15)
-            $0.top.equalTo(profileImageView)
+            $0.top.equalTo(profileImageView).offset(10)
         }
         
         typeNameLabel.snp.makeConstraints {
             $0.leading.equalTo(profileImageView.snp.trailing).offset(15)
-            $0.top.equalTo(nameLabel.snp.bottom)
-            $0.bottom.equalTo(profileImageView)
+            $0.top.equalTo(nameLabel.snp.bottom).offset(5)
         }
         
         profileImageView.snp.makeConstraints {
@@ -63,11 +62,11 @@ class PetCell: UITableViewCell {
     
     func setupAttribute() {
         profileImageView.do {
-            $0.contentMode = .scaleAspectFill
+            $0.contentMode = .scaleAspectFit
         }
         
         typeNameLabel.do {
-            $0.textColor = .systemBackground
+            $0.textColor = .darkGray
         }
     }
 }
