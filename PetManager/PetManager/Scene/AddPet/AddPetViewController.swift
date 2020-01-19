@@ -15,10 +15,10 @@ class AddPetViewController: BaseViewController, AddPetView {
     var presenter: AddPetPresenter?
     
     // MARK: - UI
-    // FIXME:
+    
     private let titleLabel = UILabel()
     private let petNameTextField = UITextField()
-    private let animalListLabel = UILabel()
+    private let guideMessageLabel = UILabel()
     private let selectedAnimalLabel = UILabel()
     private let animalListCollectionView = UICollectionView(frame: .zero,
                                                             collectionViewLayout: UICollectionViewFlowLayout())
@@ -32,7 +32,7 @@ class AddPetViewController: BaseViewController, AddPetView {
         view.do {
             $0.addSubview(titleLabel)
             $0.addSubview(petNameTextField)
-            $0.addSubview(animalListLabel)
+            $0.addSubview(guideMessageLabel)
             $0.addSubview(selectedAnimalLabel)
             $0.addSubview(animalListCollectionView)
             $0.addSubview(addButton)
@@ -48,13 +48,13 @@ class AddPetViewController: BaseViewController, AddPetView {
             $0.centerX.equalToSuperview()
         }
         
-        animalListLabel.snp.makeConstraints {
+        guideMessageLabel.snp.makeConstraints {
             $0.top.equalTo(petNameTextField.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
         }
         
         selectedAnimalLabel.snp.makeConstraints {
-            $0.top.equalTo(animalListLabel.snp.bottom).offset(5)
+            $0.top.equalTo(guideMessageLabel.snp.bottom).offset(5)
             $0.centerX.equalToSuperview()
         }
         
@@ -87,7 +87,7 @@ class AddPetViewController: BaseViewController, AddPetView {
             $0.borderStyle = .roundedRect
         }
         
-        animalListLabel.do {
+        guideMessageLabel.do {
             $0.text = "펫의 타입을 선택해주세요."
         }
         
@@ -109,6 +109,7 @@ class AddPetViewController: BaseViewController, AddPetView {
             $0.setTitleColor(.white, for: .normal)
             $0.setTitle("등록", for: .normal)
             $0.layer.cornerRadius = 10
+            $0.addTarget(self, action: #selector(addButtonDidTap), for: .touchUpInside)
         }
     }
     
@@ -118,8 +119,20 @@ class AddPetViewController: BaseViewController, AddPetView {
         selectedAnimalLabel.text = selectedTypeName
     }
     
+    func showAlert(message: String) {
+        UIAlertController(title: nil, message: message, preferredStyle: .alert).do {
+            $0.addAction(.init(title: "확인", style: .default, handler: nil))
+            present($0, animated: true, completion: nil)
+        }
+    }
+    
     @objc func viewDidTap() {
         view.endEditing(true)
+    }
+    
+    @objc func addButtonDidTap() {
+        let request = AddRequest(name: petNameTextField.text, typeName: selectedAnimalLabel.text)
+        presenter?.addButtonDidTap(with: request)
     }
     
 }
@@ -135,6 +148,7 @@ extension AddPetViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(with: AnimalCell.self, for: indexPath) else {
             return AnimalCell()
         }
+        
         presenter?.configure(view: cell, at: indexPath.row)
         return cell
     }
