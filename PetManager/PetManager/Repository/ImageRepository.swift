@@ -38,6 +38,7 @@ class ImageRepositoryImplementation: ImageRepository {
             return
         } else if let assetImage = assetImageService.fetchImage(assetName: key) {
             completion(.success(assetImage))
+            cacheService.add(assetImage, for: key)
             return
         }
         completion(.failure(RepositoryError.notFound))

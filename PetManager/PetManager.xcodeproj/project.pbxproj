@@ -24,9 +24,7 @@
 		0EDB430D23D260DF0020B0EF /* PetRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430C23D260DF0020B0EF /* PetRepositoryTests.swift */; };
 		0EDB431023D261B20020B0EF /* MockPetStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB430F23D261B20020B0EF /* MockPetStorageService.swift */; };
 		0EDB431423D264700020B0EF /* PetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431323D264700020B0EF /* PetRepository.swift */; };
-		0EDB431623D268D70020B0EF /* Pet+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431523D268D70020B0EF /* Pet+.swift */; };
 		0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB431E23D29E810020B0EF /* RepositoryError.swift */; };
-		0EDB432423D2A4C30020B0EF /* PetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432323D2A4C30020B0EF /* PetListViewController.swift */; };
 		0EDB432923D2A9BB0020B0EF /* AssetImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */; };
 		0EDB432C23D2AAAA0020B0EF /* AssetImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB432B23D2AAAA0020B0EF /* AssetImageService.swift */; };
 		0EDB433723D3CD510020B0EF /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433623D3CD510020B0EF /* ImageCacheService.swift */; };
@@ -34,6 +32,14 @@
 		0EDB433C23D3D56F0020B0EF /* MockAssetImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433B23D3D56F0020B0EF /* MockAssetImageService.swift */; };
 		0EDB433E23D3D76D0020B0EF /* MockImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433D23D3D76D0020B0EF /* MockImageCacheService.swift */; };
 		0EDB434023D3DAF20020B0EF /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433F23D3DAF20020B0EF /* ImageRepository.swift */; };
+		0EDB434A23D3E7C40020B0EF /* PetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB434923D3E7C40020B0EF /* PetListViewController.swift */; };
+		0EDB434C23D3E9200020B0EF /* PetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB434B23D3E9200020B0EF /* PetListPresenter.swift */; };
+		0EDB434F23D3EE9F0020B0EF /* PetListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB434E23D3EE9F0020B0EF /* PetListPresenterTests.swift */; };
+		0EDB435223D3F1AE0020B0EF /* Pet+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435123D3F1AE0020B0EF /* Pet+.swift */; };
+		0EDB435523D3F59D0020B0EF /* MockPetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */; };
+		0EDB435723D3F74E0020B0EF /* MockImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435623D3F74E0020B0EF /* MockImageRepository.swift */; };
+		0EDB435A23D3FC720020B0EF /* MockPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435923D3FC720020B0EF /* MockPetView.swift */; };
+		0EDB435C23D3FD310020B0EF /* MockPetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435B23D3FD310020B0EF /* MockPetListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +74,7 @@
 		0EDB430C23D260DF0020B0EF /* PetRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetRepositoryTests.swift; path = PetManagerTests/Cases/Repository/PetRepositoryTests.swift; sourceTree = SOURCE_ROOT; };
 		0EDB430F23D261B20020B0EF /* MockPetStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetStorageService.swift; sourceTree = "<group>"; };
 		0EDB431323D264700020B0EF /* PetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRepository.swift; sourceTree = "<group>"; };
-		0EDB431523D268D70020B0EF /* Pet+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+.swift"; sourceTree = "<group>"; };
 		0EDB431E23D29E810020B0EF /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
-		0EDB432323D2A4C30020B0EF /* PetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListViewController.swift; sourceTree = "<group>"; };
 		0EDB432823D2A9BB0020B0EF /* AssetImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssetImageServiceTests.swift; path = PetManagerTests/Cases/Service/AssetImageServiceTests.swift; sourceTree = SOURCE_ROOT; };
 		0EDB432B23D2AAAA0020B0EF /* AssetImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetImageService.swift; sourceTree = "<group>"; };
 		0EDB433623D3CD510020B0EF /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
@@ -78,6 +82,14 @@
 		0EDB433B23D3D56F0020B0EF /* MockAssetImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAssetImageService.swift; sourceTree = "<group>"; };
 		0EDB433D23D3D76D0020B0EF /* MockImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageCacheService.swift; sourceTree = "<group>"; };
 		0EDB433F23D3DAF20020B0EF /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		0EDB434923D3E7C40020B0EF /* PetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListViewController.swift; sourceTree = "<group>"; };
+		0EDB434B23D3E9200020B0EF /* PetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListPresenter.swift; sourceTree = "<group>"; };
+		0EDB434E23D3EE9F0020B0EF /* PetListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListPresenterTests.swift; sourceTree = "<group>"; };
+		0EDB435123D3F1AE0020B0EF /* Pet+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+.swift"; sourceTree = "<group>"; };
+		0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetRepository.swift; sourceTree = "<group>"; };
+		0EDB435623D3F74E0020B0EF /* MockImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageRepository.swift; sourceTree = "<group>"; };
+		0EDB435923D3FC720020B0EF /* MockPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetView.swift; sourceTree = "<group>"; };
+		0EDB435B23D3FD310020B0EF /* MockPetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,7 @@
 		0EDB42DC23D19CF60020B0EF /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB434D23D3EE880020B0EF /* Presenter */,
 				0EDB432523D2A9660020B0EF /* Service */,
 				0EDB430B23D260C30020B0EF /* Repository */,
 				0EDB430623D2542B0020B0EF /* Persistance */,
@@ -187,6 +200,9 @@
 		0EDB42E923D1BCE70020B0EF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB435823D3FC5E0020B0EF /* View */,
+				0EDB435323D3F5850020B0EF /* Repository */,
+				0EDB435023D3F0850020B0EF /* Entity */,
 				0EDB433A23D3D55A0020B0EF /* Service */,
 				0EDB430E23D261930020B0EF /* Persistance */,
 				0EDB42EA23D1BFD90020B0EF /* Extension */,
@@ -197,8 +213,6 @@
 		0EDB42EA23D1BFD90020B0EF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				0EDB42EB23D1BFEB0020B0EF /* Animal+.swift */,
-				0EDB431523D268D70020B0EF /* Pet+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -264,17 +278,9 @@
 		0EDB432123D2A4990020B0EF /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				0EDB432223D2A4A20020B0EF /* PetList */,
+				0EDB434823D3E79E0020B0EF /* PetList */,
 			);
 			path = Scene;
-			sourceTree = "<group>";
-		};
-		0EDB432223D2A4A20020B0EF /* PetList */ = {
-			isa = PBXGroup;
-			children = (
-				0EDB432323D2A4C30020B0EF /* PetListViewController.swift */,
-			);
-			path = PetList;
 			sourceTree = "<group>";
 		};
 		0EDB432523D2A9660020B0EF /* Service */ = {
@@ -309,6 +315,50 @@
 				0EDB431E23D29E810020B0EF /* RepositoryError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		0EDB434823D3E79E0020B0EF /* PetList */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB434923D3E7C40020B0EF /* PetListViewController.swift */,
+				0EDB434B23D3E9200020B0EF /* PetListPresenter.swift */,
+			);
+			path = PetList;
+			sourceTree = "<group>";
+		};
+		0EDB434D23D3EE880020B0EF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB434E23D3EE9F0020B0EF /* PetListPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0EDB435023D3F0850020B0EF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB42EB23D1BFEB0020B0EF /* Animal+.swift */,
+				0EDB435123D3F1AE0020B0EF /* Pet+.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		0EDB435323D3F5850020B0EF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */,
+				0EDB435623D3F74E0020B0EF /* MockImageRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		0EDB435823D3FC5E0020B0EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB435923D3FC720020B0EF /* MockPetView.swift */,
+				0EDB435B23D3FD310020B0EF /* MockPetListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,13 +466,14 @@
 				0EDB42DF23D1A0360020B0EF /* Animal.swift in Sources */,
 				0EDB42E223D1AE880020B0EF /* ImageAsset.swift in Sources */,
 				0EDB433723D3CD510020B0EF /* ImageCacheService.swift in Sources */,
-				0EDB432423D2A4C30020B0EF /* PetListViewController.swift in Sources */,
 				0EDB42E823D1BBDE0020B0EF /* Pet.swift in Sources */,
 				0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */,
 				0EDB432C23D2AAAA0020B0EF /* AssetImageService.swift in Sources */,
 				0EDB434023D3DAF20020B0EF /* ImageRepository.swift in Sources */,
 				0EDB42EF23D22B790020B0EF /* PetStorageService.swift in Sources */,
+				0EDB434A23D3E7C40020B0EF /* PetListViewController.swift in Sources */,
 				0EDB431423D264700020B0EF /* PetRepository.swift in Sources */,
+				0EDB434C23D3E9200020B0EF /* PetListPresenter.swift in Sources */,
 				0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,17 +483,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EDB431023D261B20020B0EF /* MockPetStorageService.swift in Sources */,
+				0EDB435723D3F74E0020B0EF /* MockImageRepository.swift in Sources */,
 				0EDB430823D254610020B0EF /* PetStorageServiceTests.swift in Sources */,
+				0EDB434F23D3EE9F0020B0EF /* PetListPresenterTests.swift in Sources */,
+				0EDB435523D3F59D0020B0EF /* MockPetRepository.swift in Sources */,
 				0EDB42C923D194C30020B0EF /* PetManagerTests.swift in Sources */,
+				0EDB435C23D3FD310020B0EF /* MockPetListView.swift in Sources */,
 				0EDB42EC23D1BFEB0020B0EF /* Animal+.swift in Sources */,
 				0EDB433E23D3D76D0020B0EF /* MockImageCacheService.swift in Sources */,
 				0EDB433C23D3D56F0020B0EF /* MockAssetImageService.swift in Sources */,
 				0EDB42DA23D19CDD0020B0EF /* AnimalTests.swift in Sources */,
-				0EDB431623D268D70020B0EF /* Pet+.swift in Sources */,
 				0EDB42E623D1B7160020B0EF /* PetTests.swift in Sources */,
 				0EDB432923D2A9BB0020B0EF /* AssetImageServiceTests.swift in Sources */,
 				0EDB430D23D260DF0020B0EF /* PetRepositoryTests.swift in Sources */,
 				0EDB433923D3D50F0020B0EF /* ImageRepositoryTests.swift in Sources */,
+				0EDB435A23D3FC720020B0EF /* MockPetView.swift in Sources */,
+				0EDB435223D3F1AE0020B0EF /* Pet+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
