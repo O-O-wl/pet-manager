@@ -9,16 +9,64 @@
 import UIKit
 
 class PetCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    // MARK: - UI
+    
+    private let profileImage = UIImageView()
+    private let nameLabel  = UILabel()
+    private let typeNameLabel = UILabel()
+    
+    // MARK: - Initialization
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setupLayout()
+        setupAttribute()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        setupLayout()
+        setupAttribute()
     }
-
+    
+    // MARK: - Layouts
+    
+    func setupLayout() {
+        self.do {
+            $0.addSubview(profileImage)
+            $0.addSubview(nameLabel)
+            $0.addSubview(typeNameLabel)
+        }
+        
+        profileImage.snp.makeConstraints {
+            $0.top.leading.bottom.equalToSuperview().inset(5)
+            $0.width.equalTo(profileImage.snp.height)
+        }
+        
+        nameLabel.snp.makeConstraints {
+            $0.leading.equalTo(profileImage.snp.trailing).offset(15)
+            $0.top.equalTo(profileImage)
+        }
+        
+        typeNameLabel.snp.makeConstraints {
+            $0.leading.equalTo(profileImage.snp.trailing).offset(15)
+            $0.top.equalTo(nameLabel.snp.bottom)
+            $0.bottom.equalTo(profileImage)
+        }
+    }
+    
+    // MARK: - Attributes
+    
+    func setupAttribute() {
+        profileImage.do {
+            $0.contentMode = .scaleAspectFill
+        }
+        
+        typeNameLabel.do {
+            $0.textColor = .systemBackground
+        }
+    }
 }
