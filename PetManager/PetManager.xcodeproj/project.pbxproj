@@ -33,7 +33,7 @@
 		0EDB433723D3CD510020B0EF /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433623D3CD510020B0EF /* ImageCacheService.swift */; };
 		0EDB433923D3D50F0020B0EF /* ImageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433823D3D50F0020B0EF /* ImageRepositoryTests.swift */; };
 		0EDB433C23D3D56F0020B0EF /* MockAssetImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433B23D3D56F0020B0EF /* MockAssetImageService.swift */; };
-		0EDB433E23D3D76D0020B0EF /* MockImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433D23D3D76D0020B0EF /* MockImageCache.swift */; };
+		0EDB433E23D3D76D0020B0EF /* MockImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433D23D3D76D0020B0EF /* MockImageCacheService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +77,7 @@
 		0EDB433623D3CD510020B0EF /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		0EDB433823D3D50F0020B0EF /* ImageRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageRepositoryTests.swift; path = PetManagerTests/Cases/Repository/ImageRepositoryTests.swift; sourceTree = SOURCE_ROOT; };
 		0EDB433B23D3D56F0020B0EF /* MockAssetImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAssetImageService.swift; sourceTree = "<group>"; };
-		0EDB433D23D3D76D0020B0EF /* MockImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageCache.swift; sourceTree = "<group>"; };
+		0EDB433D23D3D76D0020B0EF /* MockImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,7 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				0EDB433B23D3D56F0020B0EF /* MockAssetImageService.swift */,
-				0EDB433D23D3D76D0020B0EF /* MockImageCache.swift */,
+				0EDB433D23D3D76D0020B0EF /* MockImageCacheService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -427,7 +427,7 @@
 				0EDB430823D254610020B0EF /* PetStorageServiceTests.swift in Sources */,
 				0EDB42C923D194C30020B0EF /* PetManagerTests.swift in Sources */,
 				0EDB42EC23D1BFEB0020B0EF /* Animal+.swift in Sources */,
-				0EDB433E23D3D76D0020B0EF /* MockImageCache.swift in Sources */,
+				0EDB433E23D3D76D0020B0EF /* MockImageCacheService.swift in Sources */,
 				0EDB433C23D3D56F0020B0EF /* MockAssetImageService.swift in Sources */,
 				0EDB42DA23D19CDD0020B0EF /* AnimalTests.swift in Sources */,
 				0EDB431623D268D70020B0EF /* Pet+.swift in Sources */,
