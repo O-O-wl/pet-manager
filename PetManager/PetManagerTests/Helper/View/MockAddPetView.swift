@@ -9,6 +9,7 @@
 import Foundation
 
 class MockAddPetView: AddPetView {
+    var presenter: AddPetPresenter?
     
     var displayedTypeName = ""
     

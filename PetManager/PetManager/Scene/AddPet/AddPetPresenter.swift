@@ -14,6 +14,7 @@ struct AddRequest {
 }
 
 protocol AddPetView: AnyObject {
+    var presenter: AddPetPresenter? { get set }
     func display(selectedTypeName: String)
 }
 
