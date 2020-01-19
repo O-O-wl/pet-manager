@@ -56,6 +56,21 @@ extension PetListPresenterImplementation: PetListPresenter {
     }
     
     func configure(view: PetView, at index: Int) {
+        guard index < pets.count else { return }
         
+        let pet = pets[index]
+        view.display(name: pet.name)
+        view.display(typeName: pet.type.name)
+        
+        imageRepository.fetch(for: pet.type.profileImageAssetName) { result in
+            switch result {
+            case .success(let profileImage):
+                view.display(profileImage: profileImage)
+            case .failure(let error):
+                // FIXME: Error 핸들링 수정
+                print(error.localizedDescription)
+            }
+            
+        }
     }
 }
