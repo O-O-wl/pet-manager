@@ -74,7 +74,7 @@ class ImageRepositoryTests: XCTestCase {
         let addSuccessExpectation = expectation(description: "add success expectation")
         
         // when
-        sut.add(sampleImage, for: key1ForCache) { result in
+        sut.add(sampleImage, for: newKey) { result in
             switch result {
             case .success(_):
                 addSuccessExpectation.fulfill()
