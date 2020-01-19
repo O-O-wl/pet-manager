@@ -86,4 +86,24 @@ class ImageRepositoryTests: XCTestCase {
         }
         waitForExpectations(timeout: 2, handler: nil)
     }
+    
+    func test_fetch_Image_success_when_with_key_for_assetName() {
+        // given
+        let expectedImage = fakeImageForAssetService
+        let fetchSuccessExpectation = expectation(description: "fetch success expectation")
+        
+        // when
+        let result = sut.fetch(for: key2ForAssetService) { result in
+            switch result {
+            case .success(let image):
+                fetchSuccessExpectation.fulfill()
+                
+                // then
+                XCTAssertEqual(image, expectedImage)
+            case .failure(_):
+                ()
+            }
+        }
+        waitForExpectations(timeout: 2, handler: nil)
+    }
 }
