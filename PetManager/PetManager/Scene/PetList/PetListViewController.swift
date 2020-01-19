@@ -36,7 +36,7 @@ class PetListViewController: BaseViewController, PetListView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     // MARK: - Layouts
@@ -52,24 +52,62 @@ class PetListViewController: BaseViewController, PetListView {
     // MARK: - Attributes
     
     override func setUpAttribute() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(addButtonDidTap))
+        navigationItem.do {
+            $0.title = "🐶 나의 펫 목록 🐱"
+            $0.rightBarButtonItem = UIBarButtonItem(title: "Add",
+                                                    style: .plain,
+                                                    target: self,
+                                                    action: #selector(addButtonDidTap))
+        }
+        petListTableView.do {
+            $0.register(cellType: PetCell.self)
+            $0.dataSource = self
+            $0.delegate = self
+            $0.rowHeight = 100
+        }
     }
     
-    // MARK: - UI
+    // MARK: - Action
     
     func refresh() {
         ()
     }
     
     func showAlert(name: String, cryingSound: String) {
-        ()
+        UIAlertController(title: name, message: cryingSound, preferredStyle: .alert).do {
+            $0.addAction(.init(title: "확인", style: .default, handler: nil))
+            present($0, animated: true, completion: nil)
+        }
     }
     
     @objc func addButtonDidTap() {
         
     }
+    
+}
 
+// MARK: - UITableViewDataSource
+
+extension PetListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter?.numberOfPets ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(with: PetCell.self, for: indexPath) else {
+            return PetCell()
+        }
+        
+        presenter?.configure(view: cell, at: indexPath.row)
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension PetListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter?.didSelect(at: indexPath.row)
+    }
 }
