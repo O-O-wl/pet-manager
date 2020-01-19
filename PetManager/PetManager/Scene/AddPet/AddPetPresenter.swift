@@ -64,6 +64,7 @@ class AddPetPresenterImplementation: AddPetPresenter {
     
     func configure(view: AnimalView, at index: Int) {
         guard index < types.count else { return }
+        
         let animal = types[index]
         view.display(typeName: animal.name)
         imageRepository.fetch(for: animal.profileImageAssetName) { result in
@@ -77,7 +78,10 @@ class AddPetPresenterImplementation: AddPetPresenter {
     }
     
     func didSelectType(at index: Int) {
+        guard index < types.count else { return }
         
+        let animal = types[index]
+        view.display(selectedTypeName: animal.name)
     }
     
     func addButtonDidTap(with parameter: AddRequest) {
