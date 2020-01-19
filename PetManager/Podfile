@@ -6,3 +6,8 @@ target 'PetManager' do
 	pod 'SnapKit'
 
 end
+
+target 'PetManagerTests' do
+  	pod 'Then'
+	pod 'SnapKit'
+end

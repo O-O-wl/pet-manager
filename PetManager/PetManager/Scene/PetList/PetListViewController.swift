@@ -42,23 +42,27 @@ class PetListViewController: BaseViewController, PetListView {
     // MARK: - Layouts
     
     override func setUpLayout() {
-        view.
+        view.addSubview(petListTableView)
+        
+        petListTableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
     
     // MARK: - Attributes
     
     override func setUpAttribute() {
-        <#code#>
+        
     }
     
     // MARK: - UI
     
     func refresh() {
-        <#code#>
+        ()
     }
     
     func showAlert(name: String, cryingSound: String) {
-        <#code#>
+        ()
     }
     
 

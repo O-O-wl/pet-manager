@@ -41,6 +41,7 @@
 		0EDB435A23D3FC720020B0EF /* MockPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435923D3FC720020B0EF /* MockPetView.swift */; };
 		0EDB435C23D3FD310020B0EF /* MockPetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435B23D3FD310020B0EF /* MockPetListView.swift */; };
 		0EDB435F23D41AF20020B0EF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435E23D41AF20020B0EF /* BaseViewController.swift */; };
+		E372941DD0DC024202B2624B /* libPods-PetManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F700F8585C3E65CF517BB0F /* libPods-PetManagerTests.a */; };
 		EA0A89175FAE7BB0C5A52414 /* libPods-PetManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43302AF85904BE3AE741646D /* libPods-PetManager.a */; };
 /* End PBXBuildFile section */
 
@@ -93,8 +94,11 @@
 		0EDB435923D3FC720020B0EF /* MockPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetView.swift; sourceTree = "<group>"; };
 		0EDB435B23D3FD310020B0EF /* MockPetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetListView.swift; sourceTree = "<group>"; };
 		0EDB435E23D41AF20020B0EF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0F700F8585C3E65CF517BB0F /* libPods-PetManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PetManagerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DF32960E2681AE0D36197E0 /* Pods-PetManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetManagerTests.release.xcconfig"; path = "Target Support Files/Pods-PetManagerTests/Pods-PetManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 		43302AF85904BE3AE741646D /* libPods-PetManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PetManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E822CEF1E73C698D5D7490 /* Pods-PetManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetManager.release.xcconfig"; path = "Target Support Files/Pods-PetManager/Pods-PetManager.release.xcconfig"; sourceTree = "<group>"; };
+		E0469777992D79D54A7DE616 /* Pods-PetManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetManagerTests.debug.xcconfig"; path = "Target Support Files/Pods-PetManagerTests/Pods-PetManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F188E6CB1E1B9AD8015835E0 /* Pods-PetManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetManager.debug.xcconfig"; path = "Target Support Files/Pods-PetManager/Pods-PetManager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E372941DD0DC024202B2624B /* libPods-PetManagerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +285,7 @@
 		0EDB432023D29ED60020B0EF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB436023D41DE00020B0EF /* Extension */,
 				0EDB42E123D1AE880020B0EF /* ImageAsset.swift */,
 			);
 			path = Common;
@@ -379,10 +385,18 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		0EDB436023D41DE00020B0EF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		48CCBCA604F99AB2863CA0E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				43302AF85904BE3AE741646D /* libPods-PetManager.a */,
+				0F700F8585C3E65CF517BB0F /* libPods-PetManagerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -392,6 +406,8 @@
 			children = (
 				F188E6CB1E1B9AD8015835E0 /* Pods-PetManager.debug.xcconfig */,
 				C5E822CEF1E73C698D5D7490 /* Pods-PetManager.release.xcconfig */,
+				E0469777992D79D54A7DE616 /* Pods-PetManagerTests.debug.xcconfig */,
+				2DF32960E2681AE0D36197E0 /* Pods-PetManagerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -421,6 +437,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EDB42D023D194C30020B0EF /* Build configuration list for PBXNativeTarget "PetManagerTests" */;
 			buildPhases = (
+				BC766C645A39F49361520640 /* [CP] Check Pods Manifest.lock */,
 				0EDB42C023D194C30020B0EF /* Sources */,
 				0EDB42C123D194C30020B0EF /* Frameworks */,
 				0EDB42C223D194C30020B0EF /* Resources */,
@@ -511,6 +528,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PetManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC766C645A39F49361520640 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetManagerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -740,6 +779,7 @@
 		};
 		0EDB42D123D194C30020B0EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0469777992D79D54A7DE616 /* Pods-PetManagerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -762,6 +802,7 @@
 		};
 		0EDB42D223D194C30020B0EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DF32960E2681AE0D36197E0 /* Pods-PetManagerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
