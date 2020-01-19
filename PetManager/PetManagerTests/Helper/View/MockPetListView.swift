@@ -11,14 +11,17 @@ import UIKit
 
 class MockPetListView: PetListView {
     var presenter: PetListPresenter?
-    var alertIsShown = false
+    
+    var shownName = ""
+    var shownCryingSound = ""
     
     func refresh() {
         ()
     }
     
     func showAlert(name: String, cryingSound: String) {
-        alertIsShown = true
+        shownName = name
+        shownCryingSound = cryingSound
     }
     
 }

@@ -80,4 +80,19 @@ class PetListPresenterTests: XCTestCase {
         XCTAssertEqual(mockPetView.displayedTypeName, expectedTypeName)
         XCTAssertEqual(mockPetView.displayedProfileImage, expectedProfileImage)
     }
+    
+    func test_petview_configure() {
+        // given
+        let index = 0
+        let pet = pets[index]
+        
+        let expectedName = pet.name
+        let expectedTypeName = pet.type.name
+        let expectedProfileImage = petImages[pet.type.profileImageAssetName]!
+        
+        // when
+        
+        // then
+    }
+    
 }

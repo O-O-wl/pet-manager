@@ -11,6 +11,8 @@ import UIKit
 protocol PetListPresenter {
     var numberOfPets: Int { get }
     func configure(view: PetView, at index: Int)
+    func didSelect(at index: Int)
+    func addButtonDidTap()
 }
 
 
@@ -51,6 +53,7 @@ class PetListPresenterImplementation{
 }
 
 extension PetListPresenterImplementation: PetListPresenter {
+    
     var numberOfPets: Int {
         return pets.count
     }
@@ -73,4 +76,13 @@ extension PetListPresenterImplementation: PetListPresenter {
             
         }
     }
+    
+    func addButtonDidTap() {
+        
+    }
+    
+    func didSelect(at index: Int) {
+        
+    }
+    
 }
