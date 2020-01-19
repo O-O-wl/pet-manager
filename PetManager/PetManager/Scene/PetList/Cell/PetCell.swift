@@ -12,9 +12,9 @@ class PetCell: UITableViewCell {
     
     // MARK: - UI
     
-    private let profileImage = UIImageView()
     private let nameLabel  = UILabel()
     private let typeNameLabel = UILabel()
+    private let profileImageView = UIImageView()
     
     // MARK: - Initialization
     
@@ -36,32 +36,33 @@ class PetCell: UITableViewCell {
     
     func setupLayout() {
         self.do {
-            $0.addSubview(profileImage)
             $0.addSubview(nameLabel)
             $0.addSubview(typeNameLabel)
-        }
-        
-        profileImage.snp.makeConstraints {
-            $0.top.leading.bottom.equalToSuperview().inset(5)
-            $0.width.equalTo(profileImage.snp.height)
+            $0.addSubview(profileImageView)
         }
         
         nameLabel.snp.makeConstraints {
-            $0.leading.equalTo(profileImage.snp.trailing).offset(15)
-            $0.top.equalTo(profileImage)
+            $0.leading.equalTo(profileImageView.snp.trailing).offset(15)
+            $0.top.equalTo(profileImageView)
         }
         
         typeNameLabel.snp.makeConstraints {
-            $0.leading.equalTo(profileImage.snp.trailing).offset(15)
+            $0.leading.equalTo(profileImageView.snp.trailing).offset(15)
             $0.top.equalTo(nameLabel.snp.bottom)
-            $0.bottom.equalTo(profileImage)
+            $0.bottom.equalTo(profileImageView)
         }
+        
+        profileImageView.snp.makeConstraints {
+            $0.top.leading.bottom.equalToSuperview().inset(5)
+            $0.width.equalTo(profileImageView.snp.height)
+        }
+        
     }
     
     // MARK: - Attributes
     
     func setupAttribute() {
-        profileImage.do {
+        profileImageView.do {
             $0.contentMode = .scaleAspectFill
         }
         
@@ -70,3 +71,23 @@ class PetCell: UITableViewCell {
         }
     }
 }
+
+// MARK: - PetView
+
+extension PetCell: PetView {
+    func display(name: String) {
+        nameLabel.text = name
+    }
+    
+    func display(typeName: String) {
+        typeNameLabel.text = typeName
+    }
+    
+    func display(profileImage: UIImage) {
+        profileImageView.image = profileImage
+    }
+}
+
+// MARK: - Reusable
+
+extension PetCell: Reusable {}
