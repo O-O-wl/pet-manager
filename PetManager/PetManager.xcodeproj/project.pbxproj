@@ -38,6 +38,7 @@
 		0EDB435223D3F1AE0020B0EF /* Pet+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435123D3F1AE0020B0EF /* Pet+.swift */; };
 		0EDB435523D3F59D0020B0EF /* MockPetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */; };
 		0EDB435723D3F74E0020B0EF /* MockImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435623D3F74E0020B0EF /* MockImageRepository.swift */; };
+		0EDB435A23D3FC720020B0EF /* MockPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435923D3FC720020B0EF /* MockPetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		0EDB435123D3F1AE0020B0EF /* Pet+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+.swift"; sourceTree = "<group>"; };
 		0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetRepository.swift; sourceTree = "<group>"; };
 		0EDB435623D3F74E0020B0EF /* MockImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageRepository.swift; sourceTree = "<group>"; };
+		0EDB435923D3FC720020B0EF /* MockPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		0EDB42E923D1BCE70020B0EF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB435823D3FC5E0020B0EF /* View */,
 				0EDB435323D3F5850020B0EF /* Repository */,
 				0EDB435023D3F0850020B0EF /* Entity */,
 				0EDB433A23D3D55A0020B0EF /* Service */,
@@ -347,6 +350,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		0EDB435823D3FC5E0020B0EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB435923D3FC720020B0EF /* MockPetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -482,6 +493,7 @@
 				0EDB432923D2A9BB0020B0EF /* AssetImageServiceTests.swift in Sources */,
 				0EDB430D23D260DF0020B0EF /* PetRepositoryTests.swift in Sources */,
 				0EDB433923D3D50F0020B0EF /* ImageRepositoryTests.swift in Sources */,
+				0EDB435A23D3FC720020B0EF /* MockPetView.swift in Sources */,
 				0EDB435223D3F1AE0020B0EF /* Pet+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
