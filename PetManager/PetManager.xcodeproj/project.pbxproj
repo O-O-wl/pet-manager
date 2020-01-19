@@ -36,6 +36,7 @@
 		0EDB434C23D3E9200020B0EF /* PetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB434B23D3E9200020B0EF /* PetListPresenter.swift */; };
 		0EDB434F23D3EE9F0020B0EF /* PetListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB434E23D3EE9F0020B0EF /* PetListPresenterTests.swift */; };
 		0EDB435223D3F1AE0020B0EF /* Pet+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435123D3F1AE0020B0EF /* Pet+.swift */; };
+		0EDB435523D3F59D0020B0EF /* MockPetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		0EDB434B23D3E9200020B0EF /* PetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListPresenter.swift; sourceTree = "<group>"; };
 		0EDB434E23D3EE9F0020B0EF /* PetListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListPresenterTests.swift; sourceTree = "<group>"; };
 		0EDB435123D3F1AE0020B0EF /* Pet+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+.swift"; sourceTree = "<group>"; };
+		0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		0EDB42E923D1BCE70020B0EF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0EDB435323D3F5850020B0EF /* Repository */,
 				0EDB435023D3F0850020B0EF /* Entity */,
 				0EDB433A23D3D55A0020B0EF /* Service */,
 				0EDB430E23D261930020B0EF /* Persistance */,
@@ -333,6 +336,14 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		0EDB435323D3F5850020B0EF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -457,6 +468,7 @@
 				0EDB431023D261B20020B0EF /* MockPetStorageService.swift in Sources */,
 				0EDB430823D254610020B0EF /* PetStorageServiceTests.swift in Sources */,
 				0EDB434F23D3EE9F0020B0EF /* PetListPresenterTests.swift in Sources */,
+				0EDB435523D3F59D0020B0EF /* MockPetRepository.swift in Sources */,
 				0EDB42C923D194C30020B0EF /* PetManagerTests.swift in Sources */,
 				0EDB42EC23D1BFEB0020B0EF /* Animal+.swift in Sources */,
 				0EDB433E23D3D76D0020B0EF /* MockImageCacheService.swift in Sources */,
