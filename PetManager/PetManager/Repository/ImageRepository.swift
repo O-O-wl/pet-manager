@@ -9,6 +9,7 @@
 import UIKit
 
 protocol ImageRepository {
+    func add(_ image: UIImage, for key: String, completion: @escaping (Result<Void, Error>) -> Void)
     func fetch(for key: String, completion: @escaping (Result<UIImage, Error>) -> Void)
 }
 
@@ -24,6 +25,11 @@ class ImageRepositoryImplementation: ImageRepository {
     init(cacheService: ImageCacheService, assetImageService: AssetImageService) {
         self.cacheService = cacheService
         self.assetImageService = assetImageService
+    }
+    
+    func add(_ image: UIImage, for key: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        cacheService.add(image, for: key)
+        completion(.success(()))
     }
     
     func fetch(for key: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
