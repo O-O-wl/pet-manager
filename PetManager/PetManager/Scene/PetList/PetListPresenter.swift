@@ -82,13 +82,12 @@ extension PetListPresenterImplementation: PetListPresenter {
     }
     
     func didSelect(at index: Int) {
-        guard index < pets.count else { return }
+        guard index < pets.count,
+            let cryingSound = pets[index].type.cryingSound
+            else { return }
         
         let pet = pets[index]
-        
-        if let cryingSound = pet.type.cryingSound {
-            view.showAlert(name: pet.name, cryingSound: cryingSound)
-        }
+        view.showAlert(name: pet.name, cryingSound: cryingSound)
     }
     
 }
