@@ -78,7 +78,6 @@ extension PetListPresenterImplementation: PetListPresenter {
     
     func updatePetList() {
         fetchPets()
-        
         view.refresh()
     }
     

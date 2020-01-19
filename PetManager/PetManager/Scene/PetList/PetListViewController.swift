@@ -24,6 +24,11 @@ protocol PetListView: AnyObject {
     func present(addPetView: AddPetView)
 }
 
+enum PetListViewState {
+    case isloading
+    case didLoad
+}
+
 class PetListViewController: BaseViewController, PetListView {
     
     // MARK: - Dependencies

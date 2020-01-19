@@ -28,22 +28,27 @@ class PetStoragServiceImplementation: PetStorageService {
     // MARK: - Methods
     
     func load(completion: @escaping (Result<[Pet], Error>) -> Void) {
-        do {
-            let data = try Data(contentsOf: fileURL)
-            let pets = try JSONDecoder().decode([Pet].self, from: data)
-            completion(.success(pets))
-        } catch {
-            completion(.failure(error))
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: self.fileURL)
+                let pets = try JSONDecoder().decode([Pet].self, from: data)
+                completion(.success(pets))
+                
+            } catch {
+                completion(.failure(error))
+            }
         }
     }
     
     func save(_ pets: [Pet], completion: @escaping (Result<Void, Error>) -> Void) {
-        do {
-            let data = try JSONEncoder().encode(pets)
-            try data.write(to: fileURL)
-            completion(.success(()))
-        } catch {
-            completion(.failure(error))
+        DispatchQueue.global().async {
+            do {
+                let data = try JSONEncoder().encode(pets)
+                try data.write(to: self.fileURL)
+                completion(.success(()))
+            } catch {
+                completion(.failure(error))
+            }
         }
     }
 }
