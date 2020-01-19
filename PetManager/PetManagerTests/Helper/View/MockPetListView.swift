@@ -10,13 +10,8 @@
 import UIKit
 
 class MockPetListView: PetListView {
-    var presenter: PetListPresenter
-    
+    var presenter: PetListPresenter?
     var alertIsShown = false
-    
-    init(presenter: PetListPresenter) {
-        self.presenter = presenter
-    }
     
     func refresh() {
         ()

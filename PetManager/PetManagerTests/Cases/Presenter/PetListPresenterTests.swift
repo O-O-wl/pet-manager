@@ -5,29 +5,54 @@
 //  Created by 이동영 on 2020/01/19.
 //  Copyright © 2020 이동영. All rights reserved.
 //
-
+@testable import PetManager
 import XCTest
 
 class PetListPresenterTests: XCTestCase {
-
+    
+    var pets: [Pet]!
+    var petImages: [String: UIImage]!
+    
+    var mockPetRepository: MockPetRepository!
+    var mockImageRepository: MockImageRepository!
+    
+    var mockPetView: MockPetView!
+    var mockPetListView: MockPetListView!
+    
+    var sut: PetListPresenterImplementation!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        
+        pets = Pet.getSample()
+        
+        petImages = pets.map {
+            ($0.type.profileImageAssetName, UIImage(named:  $0.type.profileImageAssetName)!)
+        }.reduce(into: [String: UIImage]()) { $0[$1.0] = $1.1 }
+        
+        mockPetView = MockPetView()
+        mockPetListView = MockPetListView()
+        mockPetRepository = MockPetRepository(pets: pets)
+        mockImageRepository = MockImageRepository(petImages)
+        sut = PetListPresenterImplementation(view: mockPetListView,
+                                             petRepository: mockPetRepository,
+                                             imageRepository: mockImageRepository)
+        mockPetListView.presenter = sut
     }
-
+    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        pets = nil
+        petImages = nil
+        mockPetRepository = nil
+        mockImageRepository = nil
+        mockPetView = nil
+        mockPetListView = nil
+        sut = nil
+        
+        super.tearDown()
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_numberOfPets() {
+        
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

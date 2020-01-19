@@ -17,7 +17,7 @@ extension Pet: Equatable {
 }
 
 extension Pet {
-    func getSample() -> [Pet] {
+    static func getSample() -> [Pet] {
         return [Pet(name: "Dog Sample", type: .dog),
                 Pet(name: "Cat Sample", type: .cat),
                 Pet(name: "Parrot Sample", type: .parrot),
