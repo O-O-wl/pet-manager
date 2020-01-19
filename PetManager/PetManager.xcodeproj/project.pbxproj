@@ -39,6 +39,7 @@
 		0EDB435523D3F59D0020B0EF /* MockPetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */; };
 		0EDB435723D3F74E0020B0EF /* MockImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435623D3F74E0020B0EF /* MockImageRepository.swift */; };
 		0EDB435A23D3FC720020B0EF /* MockPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435923D3FC720020B0EF /* MockPetView.swift */; };
+		0EDB435C23D3FD310020B0EF /* MockPetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB435B23D3FD310020B0EF /* MockPetListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		0EDB435423D3F59D0020B0EF /* MockPetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetRepository.swift; sourceTree = "<group>"; };
 		0EDB435623D3F74E0020B0EF /* MockImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageRepository.swift; sourceTree = "<group>"; };
 		0EDB435923D3FC720020B0EF /* MockPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetView.swift; sourceTree = "<group>"; };
+		0EDB435B23D3FD310020B0EF /* MockPetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				0EDB435923D3FC720020B0EF /* MockPetView.swift */,
+				0EDB435B23D3FD310020B0EF /* MockPetListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				0EDB434F23D3EE9F0020B0EF /* PetListPresenterTests.swift in Sources */,
 				0EDB435523D3F59D0020B0EF /* MockPetRepository.swift in Sources */,
 				0EDB42C923D194C30020B0EF /* PetManagerTests.swift in Sources */,
+				0EDB435C23D3FD310020B0EF /* MockPetListView.swift in Sources */,
 				0EDB42EC23D1BFEB0020B0EF /* Animal+.swift in Sources */,
 				0EDB433E23D3D76D0020B0EF /* MockImageCacheService.swift in Sources */,
 				0EDB433C23D3D56F0020B0EF /* MockAssetImageService.swift in Sources */,
