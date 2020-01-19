@@ -113,11 +113,22 @@ class AddPetPresenterTests: XCTestCase {
         XCTAssertEqual(mockAnimalView.displayedImage, expectedImage)
     }
     
-    func test_request_add_pet() throws {
+    func test_did_select_type() {
         // given
-        let expectedAddionalPetName = "새로 추가된 고양이"
-        let expectedAddionalPetTyleName = "고양이"
-        let expectedAddionalPetType = Animal.cat
+        let index = 0
+        let animal = mockAnimalProvider.provideAllTypes()[index]
+        let expectedTypeName = animal.name
+        
+        // when
+        sut.didSelectType(at: index)
+        
+        //then
+        XCTAssertEqual(mockAddPetView.displayedTypeName, expectedTypeName)
+    }
+    //    func addButtonDidTap(with parameter: AddRequest)
+    
+    func test_add_button_did_tap() throws {
+        // given
         let expectedAddionalPetName = "새로 추가된 부엉이"
         let expectedAddionalPetTyleName = sampleTypeName1!
         let expectedAddionalPetType = sampleAnimalType1!

@@ -12,7 +12,7 @@ class MockAddPetView: AddPetView {
     
     var displayedTypeName = ""
     
-    func display(typeName type: String) {
-        
+    func display(selectedTypeName: String) {
+        displayedTypeName = selectedTypeName
     }
 }
