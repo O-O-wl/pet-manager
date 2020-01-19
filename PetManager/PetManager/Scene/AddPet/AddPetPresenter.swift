@@ -14,6 +14,7 @@ struct AddRequest {
 }
 
 protocol AddPetView: AnyObject {
+    func display(selectedTypeName: String)
 }
 
 protocol AnimalView {
@@ -62,7 +63,17 @@ class AddPetPresenterImplementation: AddPetPresenter {
     // MARK: - Action
     
     func configure(view: AnimalView, at index: Int) {
-        
+        guard index < types.count else { return }
+        let animal = types[index]
+        view.display(typeName: animal.name)
+        imageRepository.fetch(for: animal.profileImageAssetName) { result in
+            switch result {
+            case .success(let image):
+                view.display(profileImage: image)
+                // FIXME : 에러 핸들링구현
+            case .failure(_): ()
+            }
+        }
     }
     
     func didSelectType(at index: Int) {
