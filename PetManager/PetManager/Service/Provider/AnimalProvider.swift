@@ -13,7 +13,6 @@ protocol AnimalTypeProvider {
     func provide(for typeName: String) -> Animal?
 }
 
-
 class AnimalTypeProviderImplementation: AnimalTypeProvider {
     
     private let defaultTypes: [Animal] = [.dog, .cat, .parrot, .lizard]

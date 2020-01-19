@@ -9,11 +9,18 @@
 import Foundation
 
 class MockAddPetView: AddPetView {
+    
     var presenter: AddPetPresenter?
     
     var displayedTypeName = ""
+    var displayedErrorMessage = ""
     
     func display(selectedTypeName: String) {
         displayedTypeName = selectedTypeName
     }
+    
+    func showAlert(message: String) {
+        displayedErrorMessage = message
+    }
+    
 }
