@@ -53,6 +53,13 @@ class PetListPresenterTests: XCTestCase {
     }
     
     func test_numberOfPets() {
+        // given
+        let expectedNumber = pets.count
         
+        // when
+        let result = sut.numberOfPets
+        
+        // then
+        XCTAssertEqual(result, expectedNumber)
     }
 }
