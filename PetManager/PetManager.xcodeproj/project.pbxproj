@@ -10,6 +10,7 @@
 		0E2232E823D430DE0072CC1B /* AddPetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232E723D430DE0072CC1B /* AddPetPresenterTests.swift */; };
 		0E2232EB23D431D10072CC1B /* AddPetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */; };
 		0E2232ED23D43A230072CC1B /* MockAddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EC23D43A230072CC1B /* MockAddPetView.swift */; };
+		0E2232F023D44A9C0072CC1B /* AnimalProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EF23D44A9C0072CC1B /* AnimalProvider.swift */; };
 		0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B123D194C10020B0EF /* AppDelegate.swift */; };
 		0EDB42BB23D194C20020B0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BA23D194C20020B0EF /* Assets.xcassets */; };
 		0EDB42BE23D194C20020B0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */; };
@@ -66,6 +67,7 @@
 		0E2232E723D430DE0072CC1B /* AddPetPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetPresenterTests.swift; sourceTree = "<group>"; };
 		0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetPresenter.swift; sourceTree = "<group>"; };
 		0E2232EC23D43A230072CC1B /* MockAddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddPetView.swift; sourceTree = "<group>"; };
+		0E2232EF23D44A9C0072CC1B /* AnimalProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalProvider.swift; sourceTree = "<group>"; };
 		0EDB42AE23D194C10020B0EF /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDB42B123D194C10020B0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EDB42BA23D194C20020B0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +144,14 @@
 				0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */,
 			);
 			path = AddPet;
+			sourceTree = "<group>";
+		};
+		0E2232F123D44AE10072CC1B /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				0E2232EF23D44A9C0072CC1B /* AnimalProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		0EDB42A523D194C10020B0EF = {
@@ -334,6 +344,7 @@
 		0EDB432A23D2AA990020B0EF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0E2232F123D44AE10072CC1B /* Provider */,
 				0EDB432B23D2AAAA0020B0EF /* AssetImageService.swift */,
 				0EDB433623D3CD510020B0EF /* ImageCacheService.swift */,
 			);
@@ -606,6 +617,7 @@
 				0EDB433723D3CD510020B0EF /* ImageCacheService.swift in Sources */,
 				0EDB42E823D1BBDE0020B0EF /* Pet.swift in Sources */,
 				0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */,
+				0E2232F023D44A9C0072CC1B /* AnimalProvider.swift in Sources */,
 				0EDB432C23D2AAAA0020B0EF /* AssetImageService.swift in Sources */,
 				0EDB434023D3DAF20020B0EF /* ImageRepository.swift in Sources */,
 				0EDB42EF23D22B790020B0EF /* PetStorageService.swift in Sources */,
