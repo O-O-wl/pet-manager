@@ -27,6 +27,8 @@ class ImageRepositoryImplementation: ImageRepository {
         self.assetImageService = assetImageService
     }
     
+    // MARK: - Methods
+    
     func add(_ image: UIImage, for key: String, completion: @escaping (Result<Void, Error>) -> Void) {
         cacheService.add(image, for: key)
         completion(.success(()))

@@ -12,9 +12,9 @@ protocol PetListPresenter {
     var numberOfPets: Int { get }
     func configure(view: PetView, at index: Int)
     func didSelect(at index: Int)
+    func updatePetList()
     func addButtonDidTap()
 }
-
 
 class PetListPresenterImplementation{
     
@@ -35,7 +35,6 @@ class PetListPresenterImplementation{
         self.petRepository = petRepository
         self.imageRepository = imageRepository
         
-        // FIXME: - 호출할 시점 고민
         fetchPets()
     }
     
@@ -44,9 +43,9 @@ class PetListPresenterImplementation{
             switch result {
             case .success(let pets):
                 self.pets = pets
-            // FIXME:
-            case .failure(_): ()
-                
+                self.view.refresh()
+            case .failure(let error):
+                self.view.showAlert(message: error.localizedDescription)
             }
         }
     }
@@ -70,15 +69,29 @@ extension PetListPresenterImplementation: PetListPresenter {
             case .success(let profileImage):
                 view.display(profileImage: profileImage)
             case .failure(let error):
-                // FIXME: Error 핸들링 수정
-                print(error.localizedDescription)
+                self.view.showAlert(message: error.localizedDescription)
             }
-            
         }
     }
     
-    func addButtonDidTap() {
+    func updatePetList() {
+        fetchPets()
         
+        view.refresh()
+    }
+    
+    func addButtonDidTap() {
+        let addPetViewController = AddPetViewController()
+        let animalTypeProvider = DependencyContainer.shared.animalTypeProvider
+        let imageRepository = DependencyContainer.shared.imageRepository
+        let petRepository = DependencyContainer.shared.petRepository
+        
+        let addPetPresenter = AddPetPresenterImplementation(view: addPetViewController,
+                                                            animalTypeProvider: animalTypeProvider,
+                                                            imageRepository: imageRepository,
+                                                            petRepository: petRepository)
+        addPetViewController.presenter = addPetPresenter
+        view.present(addPetView: addPetViewController)
     }
     
     func didSelect(at index: Int) {

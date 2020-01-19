@@ -20,6 +20,8 @@ protocol PetListView: AnyObject {
     var presenter: PetListPresenter? { get set }
     func refresh()
     func showAlert(name: String, cryingSound: String)
+    func showAlert(message: String)
+    func present(addPetView: AddPetView)
 }
 
 class PetListViewController: BaseViewController, PetListView {
@@ -30,13 +32,18 @@ class PetListViewController: BaseViewController, PetListView {
     
     // MARK: - UI
     
-    let petListTableView = UITableView()
+    private let petListTableView = UITableView()
     
     // MARK: - Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter?.updatePetList()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     // MARK: - Layouts
@@ -63,6 +70,7 @@ class PetListViewController: BaseViewController, PetListView {
                                                     target: self,
                                                     action: #selector(addButtonDidTap))
         }
+        
         petListTableView.do {
             $0.register(cellType: PetCell.self)
             $0.dataSource = self
@@ -74,7 +82,7 @@ class PetListViewController: BaseViewController, PetListView {
     // MARK: - Action
     
     func refresh() {
-        ()
+        petListTableView.reloadData()
     }
     
     func showAlert(name: String, cryingSound: String) {
@@ -84,8 +92,19 @@ class PetListViewController: BaseViewController, PetListView {
         }
     }
     
+    func showAlert(message: String) {
+        UIAlertController(title: nil, message: message, preferredStyle: .alert).do {
+            $0.addAction(.init(title: "확인", style: .default, handler: nil))
+            present($0, animated: true, completion: nil)
+        }
+    }
+    
+    func present(addPetView: AddPetView) {
+        navigationController?.pushViewController(addPetView, animated: true)
+    }
+    
     @objc func addButtonDidTap() {
-        
+        presenter?.addButtonDidTap()
     }
     
 }

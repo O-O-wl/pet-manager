@@ -15,37 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
+        guard let window = window else { return false }
         
-        let cacheService = ImageCacheServiceImplementation()
-        let assetImageService = AssetImageServiceImplementation()
+        let navigationController = UINavigationController()
+        window.rootViewController = navigationController
         
-        let storageService = PetStoragServiceImplementation.shared
+        let petListViewController = PetListViewController()
+        let imageRepository = DependencyContainer.shared.imageRepository
+        let petRepository = DependencyContainer.shared.petRepository
         
-        let animalTypeProvider = AnimalTypeProviderImplementation()
-        let petRepository = PetRepositoryImplementation(storageService: storageService)
-        let imageRepository = ImageRepositoryImplementation(cacheService: cacheService,
-                                                            assetImageService: assetImageService)
-
-        let petListVC = PetListViewController()
+        let addPetPresenter = PetListPresenterImplementation(view: petListViewController,
+                                                             petRepository: petRepository,
+                                                             imageRepository: imageRepository)
+        petListViewController.presenter = addPetPresenter
         
-        let presenter = PetListPresenterImplementation(view: petListVC,
-                                                       petRepository: petRepository,
-                                                       imageRepository: imageRepository)
-        petListVC.presenter = presenter
+        navigationController.pushViewController(petListViewController, animated: true)
         
-        let addPetVC = AddPetViewController()
-        let addPetPresenter = AddPetPresenterImplementation(view: addPetVC,
-                                                            animalTypeProvider: animalTypeProvider,
-                                                            imageRepository: imageRepository,
-                                                            petRepository: petRepository)
-        addPetVC.presenter = addPetPresenter
-//        let navigationVC = UINavigationController(rootViewController: petListVC)
-        window?.rootViewController = addPetVC// navigationVC
-        
-//        petListVC.present(addPetVC, animated: true, completion: nil)
-        
-        window?.makeKeyAndVisible()
+        window.makeKeyAndVisible()
         return true
     }
 }
-

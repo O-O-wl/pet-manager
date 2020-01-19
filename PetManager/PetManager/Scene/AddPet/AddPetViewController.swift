@@ -22,7 +22,6 @@ class AddPetViewController: BaseViewController, AddPetView {
     private let selectedAnimalLabel = UILabel()
     private let animalListCollectionView = UICollectionView(frame: .zero,
                                                             collectionViewLayout: UICollectionViewFlowLayout())
-    private let addButton = UIButton()
     
     // MARK: - Layouts
     
@@ -35,7 +34,6 @@ class AddPetViewController: BaseViewController, AddPetView {
             $0.addSubview(guideMessageLabel)
             $0.addSubview(selectedAnimalLabel)
             $0.addSubview(animalListCollectionView)
-            $0.addSubview(addButton)
         }
         
         titleLabel.snp.makeConstraints {
@@ -63,19 +61,12 @@ class AddPetViewController: BaseViewController, AddPetView {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalToSuperview().dividedBy(4)
         }
-        
-        addButton.snp.makeConstraints {
-            $0.top.equalTo(animalListCollectionView.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(20)
-        }
     }
     
     // MARK: - Attributes
     
     override func setUpAttribute() {
         super.setUpAttribute()
-        
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTap)))
         
         titleLabel.do {
             $0.text = "펫 등록"
@@ -104,12 +95,10 @@ class AddPetViewController: BaseViewController, AddPetView {
             $0.delegate = self
         }
         
-        addButton.do {
-            $0.backgroundColor = .black
-            $0.setTitleColor(.white, for: .normal)
-            $0.setTitle("등록", for: .normal)
-            $0.layer.cornerRadius = 10
-            $0.addTarget(self, action: #selector(addButtonDidTap), for: .touchUpInside)
+        navigationItem.do {
+            $0.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                                    target: self,
+                                                    action: #selector(addButtonDidTap))
         }
     }
     
@@ -126,8 +115,8 @@ class AddPetViewController: BaseViewController, AddPetView {
         }
     }
     
-    @objc func viewDidTap() {
-        view.endEditing(true)
+    func dismiss() {
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func addButtonDidTap() {

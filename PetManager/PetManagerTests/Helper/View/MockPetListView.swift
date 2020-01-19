@@ -10,6 +10,7 @@
 import UIKit
 
 class MockPetListView: PetListView {
+    
     var presenter: PetListPresenter?
     
     var shownName = ""
@@ -22,6 +23,14 @@ class MockPetListView: PetListView {
     func showAlert(name: String, cryingSound: String) {
         shownName = name
         shownCryingSound = cryingSound
+    }
+    
+    func showAlert(message: String) {
+        ()
+    }
+    
+    func present(addPetView: AddPetView) {
+        ()
     }
     
 }

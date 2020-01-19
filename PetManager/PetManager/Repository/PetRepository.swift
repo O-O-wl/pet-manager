@@ -31,7 +31,7 @@ class PetRepositoryImplementation: PetRepository {
         self.storageService = storageService
     }
     
-    // MARK: - CRUD
+    // MARK: - Methods
     
     func add(pet: Pet, completion: @escaping (Result<Void, Error>) -> Void) {
         pets.append(pet)

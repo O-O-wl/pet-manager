@@ -6,9 +6,9 @@
 //  Copyright © 2020 이동영. All rights reserved.
 //
 @testable import PetManager
-import Foundation
+import UIKit
 
-class MockAddPetView: AddPetView {
+class MockAddPetView: UIViewController, AddPetView {
     
     var presenter: AddPetPresenter?
     
@@ -21,6 +21,10 @@ class MockAddPetView: AddPetView {
     
     func showAlert(message: String) {
         displayedErrorMessage = message
+    }
+    
+    func dismiss() {
+        ()
     }
     
 }

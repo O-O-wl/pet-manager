@@ -17,6 +17,7 @@
 		0E2232FB23D466AF0072CC1B /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232FA23D466AF0072CC1B /* AnimalCell.swift */; };
 		0E2232FD23D466C20072CC1B /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232FC23D466C20072CC1B /* UICollectionView+.swift */; };
 		0E2232FF23D47B6A0072CC1B /* VaildationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232FE23D47B6A0072CC1B /* VaildationError.swift */; };
+		0E22330123D49F660072CC1B /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22330023D49F660072CC1B /* DependencyContainer.swift */; };
 		0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B123D194C10020B0EF /* AppDelegate.swift */; };
 		0EDB42BB23D194C20020B0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BA23D194C20020B0EF /* Assets.xcassets */; };
 		0EDB42BE23D194C20020B0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */; };
@@ -80,6 +81,7 @@
 		0E2232FA23D466AF0072CC1B /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
 		0E2232FC23D466C20072CC1B /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		0E2232FE23D47B6A0072CC1B /* VaildationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaildationError.swift; sourceTree = "<group>"; };
+		0E22330023D49F660072CC1B /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		0EDB42AE23D194C10020B0EF /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDB42B123D194C10020B0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EDB42BA23D194C20020B0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				0EDB42DD23D1A0260020B0EF /* Entity */,
 				0EDB42B123D194C10020B0EF /* AppDelegate.swift */,
 				0EDB42BF23D194C20020B0EF /* Info.plist */,
+				0E22330023D49F660072CC1B /* DependencyContainer.swift */,
 			);
 			path = PetManager;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				0EDB436723D422B50020B0EF /* BaseView.swift in Sources */,
 				0EDB434C23D3E9200020B0EF /* PetListPresenter.swift in Sources */,
 				0E2232EB23D431D10072CC1B /* AddPetPresenter.swift in Sources */,
+				0E22330123D49F660072CC1B /* DependencyContainer.swift in Sources */,
 				0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

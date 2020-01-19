@@ -13,10 +13,11 @@ struct AddRequest {
     let typeName: String?
 }
 
-protocol AddPetView: AnyObject {
+protocol AddPetView: UIViewController {
     var presenter: AddPetPresenter? { get set }
     func display(selectedTypeName: String)
     func showAlert(message: String)
+    func dismiss()
 }
 
 protocol AnimalView {
@@ -59,7 +60,6 @@ class AddPetPresenterImplementation: AddPetPresenter {
         self.imageRepository = imageRepository
         self.petRepository = petRepository
         
-        // FIXME:
         types = animalTypeProvider.provideAllTypes()
     }
     
@@ -96,7 +96,7 @@ class AddPetPresenterImplementation: AddPetPresenter {
         }
     }
     
-    func vaild(request: AddRequest) throws -> Pet {
+    private func vaild(request: AddRequest) throws -> Pet {
         guard let petName = request.name,
             petName.isEmpty == false else {
                 throw VaildationError.unfiledName
@@ -110,12 +110,11 @@ class AddPetPresenterImplementation: AddPetPresenter {
         return Pet(name: petName, type: type)
     }
     
-    func requestAddtion(pet: Pet) {
+   private func requestAddtion(pet: Pet) {
         petRepository.add(pet: pet) { result in
             switch result {
-            // FIXME:
             case .success(_):
-                ()
+                self.view.dismiss()
             case .failure(let error):
                 self.view.showAlert(message: error.localizedDescription)
             }

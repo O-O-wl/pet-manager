@@ -48,14 +48,14 @@ class PetStoragServiceImplementation: PetStorageService {
     }
 }
 
-// MARK: - Singletone
+// MARK: - Singletone plus
 
 extension PetStoragServiceImplementation {
     static let fileURL: URL = {
-        let documentationDirectory = FileManager.default.urls(for: .documentationDirectory, in: .userDomainMask).first!
+        let documentationDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileName = "pets"
         return documentationDirectory.appendingPathComponent(fileName)
     }()
     
-    static let shared = PetStoragServiceImplementation(fileURL: fileURL)
+    static let `default` = PetStoragServiceImplementation(fileURL: fileURL)
 }
