@@ -69,11 +69,31 @@ class ImageRepositoryTests: XCTestCase {
     
     func test_add_image_success() {
         // given
+        let newKey = "새로운 키"
         let sampleImage = UIImage()
         let addSuccessExpectation = expectation(description: "add success expectation")
         
         // when
         sut.add(sampleImage, for: key1ForCache) { result in
+            switch result {
+            case .success(_):
+                addSuccessExpectation.fulfill()
+                
+            case .failure(_):
+                ()
+            }
+        }
+        waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+    func test_add_image_success_when_with_already_registered_key() {
+        // given
+        let oldKey = key2ForCache!
+        let sampleImage = UIImage()
+        let addSuccessExpectation = expectation(description: "add success expectation")
+        
+        // when
+        sut.add(sampleImage, for: oldKey) { result in
             switch result {
             case .success(_):
                 addSuccessExpectation.fulfill()
