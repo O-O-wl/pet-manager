@@ -81,18 +81,32 @@ class PetListPresenterTests: XCTestCase {
         XCTAssertEqual(mockPetView.displayedProfileImage, expectedProfileImage)
     }
     
-    func test_petview_configure() {
+    func test_didSelect() {
         // given
         let index = 0
         let pet = pets[index]
         
         let expectedName = pet.name
-        let expectedTypeName = pet.type.name
-        let expectedProfileImage = petImages[pet.type.profileImageAssetName]!
+        let expectedCryingSound = pet.type.cryingSound!
         
         // when
+        sut.didSelect(at: index)
         
         // then
+        XCTAssertEqual(mockPetListView.shownName, expectedName)
+        XCTAssertEqual(mockPetListView.shownCryingSound, expectedCryingSound)
+    }
+    
+    func test_didSelect_when_pet_have_not_cry_sound() {
+        // given
+        let index = pets.firstIndex { $0.type.cryingSound == nil }!
+        
+        // when
+        sut.didSelect(at: index)
+        
+        // then
+        XCTAssertTrue(mockPetListView.shownName.isEmpty)
+        XCTAssertTrue(mockPetListView.shownCryingSound.isEmpty)
     }
     
 }
