@@ -116,7 +116,9 @@ class AddPetViewController: BaseViewController, AddPetView {
     }
     
     func dismiss() {
-        navigationController?.popViewController(animated: true)
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc func addButtonDidTap() {
