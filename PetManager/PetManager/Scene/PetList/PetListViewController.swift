@@ -52,7 +52,10 @@ class PetListViewController: BaseViewController, PetListView {
     // MARK: - Attributes
     
     override func setUpAttribute() {
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(addButtonDidTap))
     }
     
     // MARK: - UI
@@ -65,5 +68,8 @@ class PetListViewController: BaseViewController, PetListView {
         ()
     }
     
+    @objc func addButtonDidTap() {
+        
+    }
 
 }
