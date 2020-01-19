@@ -34,6 +34,7 @@
 		0EDB433923D3D50F0020B0EF /* ImageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433823D3D50F0020B0EF /* ImageRepositoryTests.swift */; };
 		0EDB433C23D3D56F0020B0EF /* MockAssetImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433B23D3D56F0020B0EF /* MockAssetImageService.swift */; };
 		0EDB433E23D3D76D0020B0EF /* MockImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433D23D3D76D0020B0EF /* MockImageCacheService.swift */; };
+		0EDB434023D3DAF20020B0EF /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB433F23D3DAF20020B0EF /* ImageRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		0EDB433823D3D50F0020B0EF /* ImageRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageRepositoryTests.swift; path = PetManagerTests/Cases/Repository/ImageRepositoryTests.swift; sourceTree = SOURCE_ROOT; };
 		0EDB433B23D3D56F0020B0EF /* MockAssetImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAssetImageService.swift; sourceTree = "<group>"; };
 		0EDB433D23D3D76D0020B0EF /* MockImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageCacheService.swift; sourceTree = "<group>"; };
+		0EDB433F23D3DAF20020B0EF /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 			children = (
 				0EDB431323D264700020B0EF /* PetRepository.swift */,
 				0EDB431E23D29E810020B0EF /* RepositoryError.swift */,
+				0EDB433F23D3DAF20020B0EF /* ImageRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				0EDB42E823D1BBDE0020B0EF /* Pet.swift in Sources */,
 				0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */,
 				0EDB432C23D2AAAA0020B0EF /* AssetImageService.swift in Sources */,
+				0EDB434023D3DAF20020B0EF /* ImageRepository.swift in Sources */,
 				0EDB42EF23D22B790020B0EF /* PetStorageService.swift in Sources */,
 				0EDB431423D264700020B0EF /* PetRepository.swift in Sources */,
 				0EDB431F23D29E810020B0EF /* RepositoryError.swift in Sources */,
