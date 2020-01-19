@@ -10,6 +10,7 @@ import XCTest
 
 class ImageRepositoryTests: XCTestCase {
     
+    // given
     var key1ForCache: String!
     var key2ForCache: String!
     var key1ForAssetService: String!
@@ -66,4 +67,23 @@ class ImageRepositoryTests: XCTestCase {
         super.tearDown()
     }
     
+    func test_fetch_Image_success_when_with_key_for_cache() {
+        // given
+        let expectedImage = fakeImageForCache
+        let fetchSuccessExpectation = expectation(description: "fetch success expectation")
+        
+        // when
+        let result = sut.fetch(for: key1ForCache) { result in
+            switch result {
+            case .success(let image):
+                fetchSuccessExpectation.fulfill()
+                
+                // then
+                XCTAssertEqual(image, expectedImage)
+            case .failure(_):
+                ()
+            }
+        }
+        waitForExpectations(timeout: 2, handler: nil)
+    }
 }
