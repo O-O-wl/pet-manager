@@ -10,5 +10,26 @@ import UIKit
 
 protocol PetListPresenter {
     var numberOfPets: Int { get }
-    func configure(w: PetView, at index: Int)
+    func configure(view: PetView, at index: Int)
+}
+
+
+class PetListPresenterImplementation: PetListPresenter {
+    
+    // MARK: - Dependencies
+    private unowned let view: PetListView
+    private let petRepository: PetRepository
+    private let imageRepository: ImageRepository
+    
+    var numberOfPets: Int { return 0 }
+    
+    init(view: PetListView, petRepository: PetRepository, imageRepository: ImageRepository) {
+        self.view = view
+        self.petRepository = petRepository
+        self.imageRepository = imageRepository
+    }
+    
+    func configure(view: PetView, at index: Int) {
+        
+    }
 }
