@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 protocol PetView: AnyObject {
     func display(name: String)
@@ -20,12 +22,44 @@ protocol PetListView: AnyObject {
     func showAlert(name: String, cryingSound: String)
 }
 
-class PetListViewController: UIViewController {
-
+class PetListViewController: BaseViewController, PetListView {
+    
+    // MARK: - Dependencies
+    
+    var presenter: PetListPresenter?
+    
+    // MARK: - UI
+    
+    let petListTableView = UITableView()
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
+    // MARK: - Layouts
     
+    override func setUpLayout() {
+        view.
+    }
+    
+    // MARK: - Attributes
+    
+    override func setUpAttribute() {
+        <#code#>
+    }
+    
+    // MARK: - UI
+    
+    func refresh() {
+        <#code#>
+    }
+    
+    func showAlert(name: String, cryingSound: String) {
+        <#code#>
+    }
+    
+
 }

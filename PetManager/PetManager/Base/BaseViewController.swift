@@ -12,20 +12,28 @@ class BaseViewController: UIViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
         initialize()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
         initialize()
     }
     
-    func initialize() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         setUpLayout()
         setUpAttribute()
     }
     
+    func initialize() {}
+    
     func setUpLayout() {}
     
-    func setUpAttribute() {}
+    func setUpAttribute() {
+        view.backgroundColor = .white
+    }
 }
