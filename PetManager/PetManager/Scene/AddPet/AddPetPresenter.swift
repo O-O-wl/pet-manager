@@ -8,12 +8,31 @@
 
 import Foundation
 
-protocol AddPetPresenter {}
+struct AddRequest {
+    let name: String
+    let typeDescription: String
+}
+
+protocol AddPetView: AnyObject {
+    func display(at type: String)
+}
+
+protocol AddPetPresenter {
+    func requestAddition(with parameter: AddRequest)
+}
 
 class AddPetPresenterImplementation: AddPetPresenter {
+    
+    private unowned let view: AddPetView
     private let petRepository: PetRepository
     
-    init(petRepository: PetRepository) {
+    init(view: AddPetView, petRepository: PetRepository) {
+        self.view = view
         self.petRepository = petRepository
     }
+    
+    func requestAddition(with parameter: AddRequest) {
+        
+    }
+    
 }

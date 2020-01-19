@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E2232E823D430DE0072CC1B /* AddPetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232E723D430DE0072CC1B /* AddPetPresenterTests.swift */; };
 		0E2232EB23D431D10072CC1B /* AddPetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */; };
+		0E2232ED23D43A230072CC1B /* MockAddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2232EC23D43A230072CC1B /* MockAddPetView.swift */; };
 		0EDB42B223D194C10020B0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB42B123D194C10020B0EF /* AppDelegate.swift */; };
 		0EDB42BB23D194C20020B0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BA23D194C20020B0EF /* Assets.xcassets */; };
 		0EDB42BE23D194C20020B0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB42BC23D194C20020B0EF /* LaunchScreen.storyboard */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		0E2232E723D430DE0072CC1B /* AddPetPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetPresenterTests.swift; sourceTree = "<group>"; };
 		0E2232EA23D431D10072CC1B /* AddPetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetPresenter.swift; sourceTree = "<group>"; };
+		0E2232EC23D43A230072CC1B /* MockAddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddPetView.swift; sourceTree = "<group>"; };
 		0EDB42AE23D194C10020B0EF /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDB42B123D194C10020B0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EDB42BA23D194C20020B0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 			children = (
 				0EDB435923D3FC720020B0EF /* MockPetView.swift */,
 				0EDB435B23D3FD310020B0EF /* MockPetListView.swift */,
+				0E2232EC23D43A230072CC1B /* MockAddPetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				0EDB435C23D3FD310020B0EF /* MockPetListView.swift in Sources */,
 				0EDB42EC23D1BFEB0020B0EF /* Animal+.swift in Sources */,
 				0EDB433E23D3D76D0020B0EF /* MockImageCacheService.swift in Sources */,
+				0E2232ED23D43A230072CC1B /* MockAddPetView.swift in Sources */,
 				0EDB433C23D3D56F0020B0EF /* MockAssetImageService.swift in Sources */,
 				0EDB42DA23D19CDD0020B0EF /* AnimalTests.swift in Sources */,
 				0EDB42E623D1B7160020B0EF /* PetTests.swift in Sources */,

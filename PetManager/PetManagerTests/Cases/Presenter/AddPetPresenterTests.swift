@@ -10,6 +10,7 @@ import XCTest
 
 class AddPetPresenterTests: XCTestCase {
 
+    
     var mockPetRepository: MockPetRepository!
     var sut: AddPetPresenter!
     
@@ -25,6 +26,10 @@ class AddPetPresenterTests: XCTestCase {
         sut = nil
         
         super.tearDown()
+    }
+    
+    func test_request_add_pet() {
+        
     }
 
 }
