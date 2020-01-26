@@ -16,7 +16,7 @@ protocol PetListPresenter: AnyObject {
     func addButtonDidTap()
 }
 
-class PetListPresenterImplementation{
+class PetListPresenterImplementation {
     
     // MARK: - Dependencies
     

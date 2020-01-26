@@ -10,8 +10,6 @@ import XCTest
 
 class AnimalTests: XCTestCase {
 
-//    var sut: Animal!
-    
     override func setUp() {
         super.setUp()
         

@@ -24,11 +24,6 @@ protocol PetListView: AnyObject {
     func present(addPetView: AddPetView)
 }
 
-enum PetListViewState {
-    case isloading
-    case didLoad
-}
-
 class PetListViewController: BaseViewController, PetListView {
     
     // MARK: - Dependencies
@@ -93,9 +88,11 @@ class PetListViewController: BaseViewController, PetListView {
     }
     
     func showAlert(name: String, cryingSound: String) {
-        UIAlertController(title: name, message: cryingSound, preferredStyle: .alert).do {
-            $0.addAction(.init(title: "확인", style: .default, handler: nil))
-            present($0, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            UIAlertController(title: name, message: cryingSound, preferredStyle: .alert).do {
+                $0.addAction(.init(title: "확인", style: .default, handler: nil))
+                self.present($0, animated: true, completion: nil)
+            }
         }
     }
     
