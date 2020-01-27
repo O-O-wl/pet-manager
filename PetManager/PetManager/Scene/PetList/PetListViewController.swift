@@ -42,14 +42,11 @@ class PetListViewController: BaseViewController, PetListView {
         presenter?.updatePetList()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     // MARK: - Layouts
     
     override func setUpLayout() {
-        super.setUpAttribute()
+        /// - Note: 잘못 호출한 메소드 수정
+        super.setUpLayout()
         
         view.addSubview(petListTableView)
         
@@ -97,6 +94,7 @@ class PetListViewController: BaseViewController, PetListView {
     }
     
     func showAlert(message: String) {
+        /// - Note: 제출 후 수정
         DispatchQueue.main.async {
             UIAlertController(title: nil, message: message, preferredStyle: .alert).do {
                 $0.addAction(.init(title: "확인", style: .default, handler: nil))
@@ -106,8 +104,8 @@ class PetListViewController: BaseViewController, PetListView {
     }
     
     func present(addPetView: AddPetView) {
-        
-        navigationController?.pushViewController(addPetView, animated: true)
+        addPetView.modalPresentationStyle = .fullScreen
+        self.present(addPetView, animated: true, completion: nil)
     }
     
     @objc func addButtonDidTap() {

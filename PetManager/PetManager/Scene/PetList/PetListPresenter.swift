@@ -92,6 +92,7 @@ extension PetListPresenterImplementation: PetListPresenter {
                                                             imageRepository: imageRepository,
                                                             petRepository: petRepository)
         addPetViewController.presenter = addPetPresenter
+        
         view.present(addPetView: addPetViewController)
     }
     

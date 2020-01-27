@@ -13,6 +13,7 @@ struct Animal: Codable {
     let cryingSound: String?
     let profileImageAssetName: String
 }
+
 extension Animal {
     static let dog = Animal(name: "강아지", cryingSound: "멍 멍", profileImageAssetName: ImageAsset.Name.dog)
     static let cat = Animal(name: "고양이", cryingSound: "야 옹", profileImageAssetName: ImageAsset.Name.cat)

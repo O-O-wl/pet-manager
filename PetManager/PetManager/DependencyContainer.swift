@@ -28,7 +28,6 @@ class DependencyContainer {
     lazy var imageRepository = ImageRepositoryImplementation(cacheService: cacheService,
                                                              assetImageService: assetImageService)
     
-    
     private init() {}
     
 }

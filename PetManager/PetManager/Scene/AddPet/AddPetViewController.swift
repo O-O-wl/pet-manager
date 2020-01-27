@@ -17,6 +17,8 @@ class AddPetViewController: BaseViewController, AddPetView {
     // MARK: - UI
     
     private let titleLabel = UILabel()
+    private let cancelButton = UIButton()
+    private let addButton = UIButton()
     private let petNameTextField = UITextField()
     private let guideMessageLabel = UILabel()
     private let selectedAnimalLabel = UILabel()
@@ -26,10 +28,13 @@ class AddPetViewController: BaseViewController, AddPetView {
     // MARK: - Layouts
     
     override func setUpLayout() {
-        super.setUpAttribute()
+        /// - Note: 잘못 호출한 메소드 수정
+        super.setUpLayout()
         
         view.do {
             $0.addSubview(titleLabel)
+            $0.addSubview(cancelButton)
+            $0.addSubview(addButton)
             $0.addSubview(petNameTextField)
             $0.addSubview(guideMessageLabel)
             $0.addSubview(selectedAnimalLabel)
@@ -37,29 +42,39 @@ class AddPetViewController: BaseViewController, AddPetView {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(50)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             $0.centerX.equalToSuperview()
+        }
+        
+        cancelButton.snp.makeConstraints {
+            $0.centerY.equalTo(titleLabel)
+            $0.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
+        }
+        
+        addButton.snp.makeConstraints {
+            $0.centerY.equalTo(titleLabel)
+            $0.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
         
         petNameTextField.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-            $0.centerX.equalToSuperview()
+            $0.centerX.equalTo(view.safeAreaLayoutGuide)
         }
         
         guideMessageLabel.snp.makeConstraints {
             $0.top.equalTo(petNameTextField.snp.bottom).offset(20)
-            $0.centerX.equalToSuperview()
+            $0.centerX.equalTo(view.safeAreaLayoutGuide)
         }
         
         selectedAnimalLabel.snp.makeConstraints {
             $0.top.equalTo(guideMessageLabel.snp.bottom).offset(5)
-            $0.centerX.equalToSuperview()
+            $0.centerX.equalTo(view.safeAreaLayoutGuide)
         }
         
         animalListCollectionView.snp.makeConstraints {
             $0.top.equalTo(selectedAnimalLabel.snp.bottom).offset(5)
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalToSuperview().dividedBy(4)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.height.equalTo(view.safeAreaLayoutGuide).dividedBy(4)
         }
     }
     
@@ -71,6 +86,18 @@ class AddPetViewController: BaseViewController, AddPetView {
         titleLabel.do {
             $0.text = "펫 등록"
             $0.font = .boldSystemFont(ofSize: 20)
+        }
+        
+        cancelButton.do {
+            $0.setTitle("취소", for: .normal)
+            $0.setTitleColor(.systemBlue, for: .normal)
+            $0.addTarget(self, action: #selector(cancelButtonDidTap), for: .touchUpInside)
+        }
+        
+        addButton.do {
+            $0.setTitle("완료", for: .normal)
+            $0.setTitleColor(.systemBlue, for: .normal)
+            $0.addTarget(self, action: #selector(addButtonDidTap), for: .touchUpInside)
         }
         
         petNameTextField.do {
@@ -95,11 +122,6 @@ class AddPetViewController: BaseViewController, AddPetView {
             $0.delegate = self
         }
         
-        navigationItem.do {
-            $0.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
-                                                    target: self,
-                                                    action: #selector(addButtonDidTap))
-        }
     }
     
     // MARK: - Action
@@ -109,6 +131,7 @@ class AddPetViewController: BaseViewController, AddPetView {
     }
     
     func showAlert(message: String) {
+        /// - Note: 제출 후 수정
         DispatchQueue.main.async {
             UIAlertController(title: nil, message: message, preferredStyle: .alert).do {
                 $0.addAction(.init(title: "확인", style: .default, handler: nil))
@@ -119,8 +142,12 @@ class AddPetViewController: BaseViewController, AddPetView {
     
     func dismiss() {
         DispatchQueue.main.async {
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    @objc func cancelButtonDidTap() {
+        dismiss()
     }
     
     @objc func addButtonDidTap() {
@@ -155,7 +182,7 @@ extension AddPetViewController: UICollectionViewDelegate {
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         
         cell.backgroundColor = .gray
-        UIView.animate(withDuration: 0.3){
+        UIView.animate(withDuration: 0.3) {
             cell.backgroundColor = .white
         }
         presenter?.didSelectType(at: indexPath.item)
